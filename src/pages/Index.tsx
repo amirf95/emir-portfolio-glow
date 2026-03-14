@@ -20,7 +20,7 @@ const Index = () => {
       <Contact />
       <footer className="py-8 text-center border-t border-border">
         <p className="font-mono text-sm text-muted-foreground">
-          © 2025 Emir Fenina. Built with passion.
+          © 2025 Emir Fenina.
         </p>
       </footer>
     </div>
