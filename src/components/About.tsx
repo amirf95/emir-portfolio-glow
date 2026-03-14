@@ -24,7 +24,7 @@ const About = () => {
               I enjoy turning ideas into functional software systems, with a particular interest in full-stack web development and emerging technologies. Recently, I've been exploring <span className="text-primary">Fast Fourier Transform (FFT)</span>, audio-reactive visual systems, and AI-based applications.
             </p>
             <p className="text-secondary-foreground leading-relaxed">
-              Outside of coding, I'm passionate about fitness and personal discipline Football is also a big part of my life .I can literraly defie all the world to just support my team which is <span className="text-red-600 font-bold">Club Africain </span>. My long-term goal is to pursue a <span className="text-primary">Master's in Cybersecurity</span>.
+              Outside of coding, I'm passionate about fitness and personal discipline Football is also a big part of my life .I can literraly defie all the world to just support my team which is <span className="text-red-600 font-bold">Club Africain </span>. My long-term goal is to pursue a <span className="text-primary">Master's in Machine Learning</span>.
             </p>
           </div>
         </motion.div>

@@ -37,7 +37,7 @@ const Hero = () => {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-lg md:text-xl text-muted-foreground font-mono max-w-2xl mx-auto mb-10"
         >
-          Software Engineering Student · Full-Stack Developer · Future Cybersecurity Specialist
+          Software Engineering Student · Full-Stack Developer · Future Machine Learning Specialist
         </motion.p>
 
         <motion.div
