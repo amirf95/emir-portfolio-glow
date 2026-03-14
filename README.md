@@ -7,8 +7,8 @@ Question 4 :
 
 Visit a website that interests you. Write a one-page summary of the site that addresses the following topics: 
 a) What is the URL of the site?
- 	b) What is the purpose of the site?
- 	c) Who is the intended audience?
+ b) What is the purpose of the site?
+ c) Who is the intended audience?
 d) Do you think that the site reaches its intended audience? Why or why not?
 e) Is the site useful to you? Why or why not? 
 f) Does this site appeal to you? Why or why not? Consider the use of color, images, multimedia, organization, and ease of navigation. 
@@ -18,11 +18,11 @@ h) How could this site be improved?
 Answer : 
 
 The Site i have chosen as an AI ENTHUSIASTIC is Hugging Face 
-a) What is the URL of the site?
+	a) What is the URL of the site?
  
 Hugging Face URL : https://huggingface.co/
 
-b) What is the purpose of the site?
+	b) What is the purpose of the site?
 
 The purpose of the Hugging Face website is to provide ready-to-use tools, models, and resources that help AI engineers easily build and deploy machine learning and deep learning models.
 It acts as a collaborative platform focused entirely on artificial intelligence. Because of its large collection of datasets and models especially in areas such as natural language processing and computer vision—it has earned the nickname “the GitHub of Machine Learning.”
