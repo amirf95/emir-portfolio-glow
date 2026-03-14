@@ -18,13 +18,13 @@ const About = () => {
           
           <div className="bg-card rounded-xl p-8 border border-border border-glow">
             <p className="text-secondary-foreground leading-relaxed mb-4">
-              I'm a fourth-year Software Engineering student originally from <span className="text-primary">Tunisia</span>, currently studying abroad. I'm deeply passionate about software development, AI, and building real-world applications that solve meaningful problems.
+              I'm a fourth-year Software Engineering student originally from <span className="text-primary">Tunisia</span>, currently studying abroad in North Cyprus Near East University. I'm deeply passionate about software development, AI, and building real-world applications that solve meaningful problems.
             </p>
             <p className="text-secondary-foreground leading-relaxed mb-4">
               I enjoy turning ideas into functional software systems, with a particular interest in full-stack web development and emerging technologies. Recently, I've been exploring <span className="text-primary">Fast Fourier Transform (FFT)</span>, audio-reactive visual systems, and AI-based applications.
             </p>
             <p className="text-secondary-foreground leading-relaxed">
-              Outside of coding, I'm passionate about fitness and personal discipline — habits that fuel my focus and determination in both academic and technical pursuits. My long-term goal is to pursue a <span className="text-primary">Master's in Cybersecurity</span>.
+              Outside of coding, I'm passionate about fitness and personal discipline Football is also a big part of my life .I can literraly defie all the world to just support my team which is <span className="text-red-600 font-bold">Club Africain </span>. My long-term goal is to pursue a <span className="text-primary">Master's in Cybersecurity</span>.
             </p>
           </div>
         </motion.div>
