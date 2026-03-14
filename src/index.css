@@ -86,3 +86,14 @@ html {
   background: hsl(220 15% 20%);
   border-radius: 3px;
 }
+
+/* Remove Lovable / GPT-Engineer branding badge */
+#lovable-badge, 
+.lovable-badge, 
+[data-lovable-badge="true"],
+#gpt-engineer-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
