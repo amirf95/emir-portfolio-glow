@@ -18,14 +18,14 @@ const Contact = () => {
 
           <div className="flex justify-center gap-6">
             <a
-              href="mailto:emir.fenina@email.com"
+              href="mailto:amirfenina03@email.com"
               className="flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300 hover:shadow-[var(--glow-primary)]"
             >
               <Mail className="w-4 h-4" />
               <span className="font-mono text-sm">Email</span>
             </a>
             <a
-              href="https://linkedin.com/in/emirfenina"
+              href="http://linkedin.com/in/amir-fenina-3b299b244/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300 hover:shadow-[var(--glow-primary)]"
@@ -34,7 +34,7 @@ const Contact = () => {
               <span className="font-mono text-sm">LinkedIn</span>
             </a>
             <a
-              href="https://github.com/emirfenina"
+              href="https://github.com/amirf95"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300 hover:shadow-[var(--glow-primary)]"
