@@ -11,6 +11,36 @@ const Hero = () => {
       <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-primary/10 blur-[120px] animate-pulse-glow" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-accent/10 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
 
+      {/* ============================================== */}
+      {/* STYLED PROFILE PHOTO SECTION                   */}
+      {/* ============================================== */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1, duration: 0.5 }}
+        >
+          {/* Back Glow Layer (Secondary color - Accent/Purple) */}
+          <div className="absolute -inset-1.5 rounded-full bg-accent blur-md opacity-40 animate-pulse-glow" style={{ animationDelay: "1s" }} />
+          
+          {/* Main Glow Layer (Primary color - Cyan/Blue) */}
+          <div className="absolute -inset-1 rounded-full bg-primary blur opacity-60 animate-pulse-glow" />
+
+          {/* Image Container with Inner Border */}
+          <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/80 ring-2 ring-black/40">
+            <img 
+              // Assumes your file is at public/mYOPHOTO2.jpg
+              src="/mYOPHOTO2.jpg" 
+              alt="Emir Fenina" 
+              // Adds standard aspect ratio control and a slight screen filter
+              className="w-full h-full object-cover filter brightness-[0.9] grayscale-[10%] sepia-[15%]"
+            />
+          </div>
+        </motion.div>
+      </div>
+      {/* ============================================== */}
+
       <div className="relative z-10 text-center px-6 max-w-4xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
