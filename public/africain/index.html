@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultras Africain Winners — Home</title>
+  <style>
+    :root {
+      --bg: #07070d;
+      --card: #0f0f1a;
+      --red: #cc1111;
+      --red-dark: #7a0000;
+      --red-light: #ff5555;
+      --white: #f2f2f2;
+      --muted: #7a7a99;
+      --border: #200808;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background: var(--bg); color: var(--white); line-height: 1.7; }
+
+    /* ── Nav ── */
+    nav {
+      background: #09000a;
+      border-bottom: 2px solid var(--red);
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { font-size: 1.05rem; font-weight: bold; color: var(--red); padding: 14px 0; text-decoration: none; letter-spacing: 3px; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 0; }
+    .nav-links a { color: var(--muted); text-decoration: none; padding: 15px 13px; font-size: 0.78rem; letter-spacing: 0.4px; text-transform: uppercase; transition: color .2s, background .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(204,17,17,.15); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      background: radial-gradient(ellipse at center, #2a0000 0%, #0a0000 45%, var(--bg) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(204,17,17,.04) 60px,
+        rgba(204,17,17,.04) 61px
+      );
+    }
+    .hero-arabic {
+      font-size: 2.8rem;
+      color: rgba(204,17,17,.45);
+      letter-spacing: 6px;
+      margin-bottom: 18px;
+      font-weight: bold;
+      direction: rtl;
+    }
+    .hero-title {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--white);
+      text-shadow: 0 0 60px rgba(204,17,17,.7);
+      margin-bottom: 10px;
+    }
+    .hero-title span { color: var(--red); }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--red-dark);
+      border: 1px solid var(--red);
+      color: #ffaaaa;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 2px;
+      margin-bottom: 48px;
+    }
+    .hero-quote {
+      max-width: 520px;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-left: 3px solid var(--red);
+      padding-left: 18px;
+      text-align: left;
+      margin-bottom: 56px;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+    .hero-cta a {
+      padding: 13px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all .2s;
+    }
+    .btn-primary { background: var(--red); color: #fff; }
+    .btn-primary:hover { background: var(--red-light); }
+    .btn-outline { border: 1px solid var(--red); color: var(--red); }
+    .btn-outline:hover { background: rgba(204,17,17,.15); }
+
+    /* ── Nav cards ── */
+    .section-nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+    .section-nav h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: var(--red);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-nav p.intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 48px;
+      font-size: 0.95rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .page-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 24px;
+      text-decoration: none;
+      display: block;
+      transition: border-color .25s, transform .2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transition: transform .25s;
+      transform-origin: left;
+    }
+    .page-card:hover { border-color: var(--red-dark); transform: translateY(-3px); }
+    .page-card:hover::after { transform: scaleX(1); }
+    .page-card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .page-card h3 { font-size: 1.05rem; color: var(--white); letter-spacing: 1px; margin-bottom: 10px; }
+    .page-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── Stripe divider ── */
+    .stripe {
+      height: 6px;
+      background: repeating-linear-gradient(90deg, var(--red) 0, var(--red) 50%, var(--white) 50%, var(--white) 100%);
+      background-size: 24px 100%;
+      opacity: .35;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #060006;
+      border-top: 2px solid var(--red-dark);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--red); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">UAW</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="club.html">Club Africain</a>
+    <a href="ultras-what.html">What is Ultras?</a>
+    <a href="ultras-arab.html">Arab World</a>
+    <a href="uaw.html">Ultras Winners</a>
+    <a href="groups.html">Groups &amp; Friends</a>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-arabic">الألتراس أفريكان وينرز</div>
+  <h1 class="hero-title">Ultras <span>Africain</span><br>Winners</h1>
+  <p class="hero-sub">Tunis — Tunisia — Since 1995</p>
+  <span class="hero-badge">First in Tunisia &bull; First in the Arab World</span>
+  <blockquote class="hero-quote">
+    "Being an ultra is not a hobby. It is a way of life — a commitment that goes beyond the final whistle,
+    beyond the season, beyond everything ordinary."
+  </blockquote>
+  <div class="hero-cta">
+    <a href="uaw.html" class="btn-primary">Ultras Africain Winners</a>
+    <a href="club.html" class="btn-outline">Club Africain</a>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ── Section navigation cards ── -->
+<div class="section-nav">
+  <h2>Explore</h2>
+  <p class="intro">Five chapters. One identity. Everything you need to know about the Winners, the club, and the culture.</p>
+
+  <div class="cards-grid">
+    <a class="page-card" href="club.html">
+      <div class="icon">&#9917;</div>
+      <h3>Club Africain</h3>
+      <p>Founded in 1920. One continental title. Fourteen league championships. The pride of Tunis — Al Ifriki.</p>
+    </a>
+
+    <a class="page-card" href="ultras-what.html">
+      <div class="icon">&#128293;</div>
+      <h3>What is Ultras?</h3>
+      <p>Born in Italy in the late 1960s. Tifo, capos, the curva. Going beyond ordinary fandom — what it truly means to be an ultra.</p>
+    </a>
+
+    <a class="page-card" href="ultras-arab.html">
+      <div class="icon">&#127756;</div>
+      <h3>Ultras in the Arab World</h3>
+      <p>الألتراس — how ultra culture spread from Naples and Rome to Tunis, Casablanca, and Cairo. Tunisia led the way.</p>
+    </a>
+
+    <a class="page-card" href="uaw.html">
+      <div class="icon">&#127937;</div>
+      <h3>Ultras Africain Winners</h3>
+      <p>The group that started it all. Since 1995. The Virage Nord. The tifos. What it means to be a Winner.</p>
+    </a>
+
+    <a class="page-card" href="groups.html">
+      <div class="icon">&#129309;</div>
+      <h3>Groups &amp; Friendships</h3>
+      <p>The four great Tunisian ultra groups, and the red thread that connects African Winners with Winners 2005 of Casablanca.</p>
+    </a>
+  </div>
+</div>
+
+<div class="stripe"></div>
+
+<footer>
+  <p>A tribute to <strong style="color:#cc1111;">Club Africain</strong> and the <strong style="color:#cc1111;">Ultras Africain Winners</strong> &mdash; الألتراس أفريكان وينرز</p>
+  <p style="margin-top:8px;">Made with passion by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Final Project</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is Ultras? — Philosophy &amp; Origins</title>
+  <style>
+    :root { --bg:#07070d; --card:#0f0f1a; --red:#cc1111; --red-dark:#7a0000; --red-light:#ff5555; --white:#f2f2f2; --muted:#7a7a99; --border:#200808; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,sans-serif; background:var(--bg); color:var(--white); line-height:1.75; }
+    nav { background:#09000a; border-bottom:2px solid var(--red); padding:0 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .nav-brand { font-size:1.05rem; font-weight:bold; color:var(--red); padding:14px 0; text-decoration:none; letter-spacing:3px; text-transform:uppercase; }
+    .nav-links { display:flex; }
+    .nav-links a { color:var(--muted); text-decoration:none; padding:15px 13px; font-size:0.78rem; letter-spacing:0.4px; text-transform:uppercase; transition:color .2s,background .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
+
+    .page-hero { background:linear-gradient(135deg,#1a0a00 0%,#0a0008 60%,var(--bg) 100%); padding:72px 24px 56px; text-align:center; border-bottom:1px solid var(--border); }
+    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+    .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 40px rgba(204,17,17,.5); margin-bottom:10px; }
+    .page-hero p { color:var(--muted); font-size:0.95rem; max-width:540px; margin:0 auto; }
+
+    .container { max-width:900px; margin:0 auto; padding:60px 24px; }
+    .back-link { display:inline-block; margin-bottom:36px; color:var(--muted); font-size:0.82rem; text-decoration:none; letter-spacing:1px; }
+    .back-link:hover { color:var(--red); }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    h2 { font-size:1.3rem; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    h3 { font-size:1rem; color:#ff8888; margin:18px 0 8px; letter-spacing:0.5px; }
+    p { color:#c8c8d8; margin-bottom:12px; font-size:0.92rem; }
+    strong { color:var(--white); }
+
+    /* Latin word display */
+    .word-display { text-align:center; padding:32px 0; }
+    .word-latin { font-size:4rem; font-weight:900; color:var(--red); letter-spacing:6px; display:block; text-shadow:0 0 30px rgba(204,17,17,.4); }
+    .word-meaning { font-size:0.9rem; color:var(--muted); letter-spacing:3px; text-transform:uppercase; margin-top:8px; display:block; }
+
+    /* Principles grid */
+    .principles { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+    .principle { background:#0a0008; border:1px solid #2a0d0d; border-radius:8px; padding:22px 20px; }
+    .principle .p-icon { font-size:1.6rem; margin-bottom:10px; display:block; }
+    .principle h4 { font-size:0.88rem; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+    .principle p { font-size:0.82rem; color:var(--muted); margin:0; }
+
+    /* Blockquote */
+    blockquote { border-left:3px solid var(--red); padding:14px 20px; background:#0f0008; border-radius:0 6px 6px 0; margin:18px 0; font-style:italic; color:#c0c0d0; font-size:0.9rem; }
+    blockquote cite { display:block; margin-top:8px; font-style:normal; color:var(--muted); font-size:0.8rem; }
+
+    /* Code of the curve */
+    .code-list { list-style:none; }
+    .code-list li { display:flex; gap:14px; align-items:flex-start; padding:12px 0; border-bottom:1px solid #18080a; font-size:0.9rem; color:#c0c0d0; }
+    .code-list li:last-child { border-bottom:none; }
+    .code-list .num { color:var(--red); font-weight:bold; font-size:1.1rem; flex-shrink:0; width:24px; }
+
+    .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
+    footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
+    footer a { color:var(--red); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">UAW</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="club.html">Club Africain</a>
+    <a href="ultras-what.html" class="active">What is Ultras?</a>
+    <a href="ultras-arab.html">Arab World</a>
+    <a href="uaw.html">Ultras Winners</a>
+    <a href="groups.html">Groups &amp; Friends</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="label">Origins &bull; Philosophy &bull; Way of Life</p>
+  <h1>What is Ultras?</h1>
+  <p>Beyond ordinary fandom. Beyond the final whistle. A culture, a code, and a complete way of seeing the game.</p>
+</div>
+
+<div class="container">
+  <a class="back-link" href="index.html">&#8592; Back to Home</a>
+
+  <!-- The word -->
+  <div class="card">
+    <h2>The Word Itself</h2>
+    <div class="word-display">
+      <span class="word-latin">ULTRA</span>
+      <span class="word-meaning">Latin — "Beyond" &bull; Further than &bull; On the other side of</span>
+    </div>
+    <p>
+      The word "ultra" comes from Latin, meaning <strong>"beyond"</strong> — further than the ordinary,
+      past the limits of what is expected. An ultra fan does not simply attend a match: they go beyond.
+      Beyond the ordinary spectator. Beyond comfort. Beyond reason. The name itself is a manifesto.
+    </p>
+    <p>
+      To be an ultra is to commit to something larger than yourself. Your club is not your weekend hobby —
+      it is your identity. The curve is not your seat — it is your territory. The ninety minutes are not
+      entertainment — they are a battleground of passion.
+    </p>
+  </div>
+
+  <!-- Origins -->
+  <div class="card">
+    <h2>Born in Italy — The 1960s and 70s</h2>
+    <p>
+      The ultra movement was born in <strong>Italy</strong> during the politically turbulent late 1960s and 1970s,
+      a period known as the "Years of Lead." The first formalized ultra group is widely credited to
+      <strong>Sampdoria's "Ultras Tito Cucchiaroni" in 1969</strong>. However, proto-ultra groups emerged even
+      earlier: Torino's "Fedelissimi Granata" in 1951, and AC Milan's "Fossa dei Leoni" in 1968.
+    </p>
+    <p>
+      These groups were inspired partly by the political passion and collective action of the era —
+      student movements, labor unions, civic organizations. They borrowed the language of political
+      movements — banners, organized chanting, mass choreography — and redirected it into the football
+      stadium. The curve became their parliament.
+    </p>
+
+    <blockquote>
+      "The ultra phenomenon in Italy arose in the context of a society in turmoil — and the stadium
+      became one of the few places where young men could organize, express collective identity,
+      and feel genuinely powerful."
+      <cite>— Academic analysis of Italian ultra culture</cite>
+    </blockquote>
+
+    <h3>Spreading Across Europe</h3>
+    <p>
+      Through the 1970s and 1980s, ultra culture spread from Italy to <strong>Spain</strong> (where fans
+      became "ultras" or "boixos"), <strong>France</strong> (the "kop" culture in Marseille and Paris),
+      <strong>Germany</strong>, and <strong>Eastern Europe</strong>. By the 1990s, it had crossed the
+      Mediterranean and taken root in <strong>North Africa</strong> — beginning in Tunisia.
+    </p>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="card">
+    <h2>The Ultra Philosophy</h2>
+    <p>
+      Being an ultra is not about the result on the scoreboard. It is about the atmosphere you create,
+      the loyalty you demonstrate, and the identity you build around your club. The ultra code is built
+      on a set of core principles shared by groups from Naples to Tunis to Casablanca.
+    </p>
+
+    <div class="principles" style="margin-top:20px;">
+      <div class="principle">
+        <span class="p-icon">&#128293;</span>
+        <h4>The Curve</h4>
+        <p>The ultra group owns a specific stand — called the "curva" in Italian or "virage" in French. It is sovereign territory. Everything happens here.</p>
+      </div>
+      <div class="principle">
+        <span class="p-icon">&#127937;</span>
+        <h4>Tifo</h4>
+        <p>Hand-painted giant banners, colored card sections, flag cascades, and flare smoke — unveiled the moment the players emerge from the tunnel. Tifo is the group's visual voice.</p>
+      </div>
+      <div class="principle">
+        <span class="p-icon">&#127908;</span>
+        <h4>The Capo</h4>
+        <p>The leader who stands at the front of the curve, back to the pitch, facing their own fans — directing chants and choreo with arms, megaphone, and voice.</p>
+      </div>
+      <div class="principle">
+        <span class="p-icon">&#128246;</span>
+        <h4>Chants</h4>
+        <p>Ultras compose original chants — set to music, poetry, and rhythm. Their chants narrate the club's history, its glory, and its enemies. Ninety minutes of song.</p>
+      </div>
+      <div class="principle">
+        <span class="p-icon">&#9992;</span>
+        <h4>Away Days</h4>
+        <p>Ultras follow their team everywhere — home, away, across the continent. The hardship of travel to a hostile away ground is a badge of honor.</p>
+      </div>
+      <div class="principle">
+        <span class="p-icon">&#129309;</span>
+        <h4>Brotherhood</h4>
+        <p>The group is a family. Members cover each other's costs, share resources, and stand together. Friendships with allied groups ("gemellaggio") cross city and national borders.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Code -->
+  <div class="card">
+    <h2>The Code of the Curve</h2>
+    <p style="margin-bottom:20px;">
+      Every authentic ultra group operates by a set of unwritten but deeply respected rules. These are
+      the principles that separate true ultras from ordinary fans.
+    </p>
+    <ul class="code-list">
+      <li><span class="num">1</span><div><strong>Independence from the club.</strong> Ultras groups fund themselves. They refuse corporate sponsorship, club subsidies, or any arrangement that could compromise their freedom to criticize club management.</div></li>
+      <li><span class="num">2</span><div><strong>No politics inside the curve.</strong> The classic ultra tradition holds that the curve is politically neutral. Whatever your views outside the stadium, inside the curve you are united only by the club.</div></li>
+      <li><span class="num">3</span><div><strong>You support through defeat.</strong> The mark of a true ultra is loyalty in relegation, in crisis, in humiliation. Fair-weather fans are unwelcome in the curve.</div></li>
+      <li><span class="num">4</span><div><strong>The tifo is sacred.</strong> Months of work — painting, folding, building — go into a tifo display that lasts 90 seconds. It is made with pride and presented with ceremony.</div></li>
+      <li><span class="num">5</span><div><strong>Respect the alliance, honor the rivalry.</strong> Friend groups ("gemellaggio") are treated as brothers. Enemy groups face the full force of the curve's contempt — inside the stadium, through banners, through songs.</div></li>
+      <li><span class="num">6</span><div><strong>Never sit down.</strong> The curve stands for ninety minutes, plus injury time, plus the celebration. Sitting is for the grandstand. The curve lives on its feet.</div></li>
+    </ul>
+  </div>
+
+  <blockquote style="font-size:1rem; border-left-width:4px;">
+    "Being an ultra is not a hobby. It is a way of life — a commitment that goes beyond the final whistle,
+    beyond the season, beyond everything ordinary. When you enter the curve, you leave the ordinary world behind."
+  </blockquote>
+
+</div>
+
+<div class="stripe"></div>
+<footer>
+  <p>A tribute to <strong style="color:#cc1111;">Club Africain</strong> and the <strong style="color:#cc1111;">Ultras Africain Winners</strong></p>
+  <p style="margin-top:6px;">Made with passion by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Final Project</p>
+</footer>
+</body>
+</html>

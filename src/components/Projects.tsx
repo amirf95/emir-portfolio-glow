@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
 import { FolderGit2, ExternalLink } from "lucide-react";
 
-const projects = [
+const projects: { title: string; description: string; tech: string[]; type: string; link?: string }[] = [
+  {
+    title: "Ultras Africain Winners — Club Africain Tribute",
+    description:
+      "A multi-page web project dedicated to Club Africain and the Ultras Africain Winners — the first ultra group in Tunisia and the Arab world. Six interconnected pages covering the club's history, the philosophy of ultra culture, the Arabic ultra world الألتراس, and the friendship with Winners 2005 Casablanca.",
+    tech: ["HTML5", "CSS3", "Multi-page Site", "Arabic Typography", "ECC006 Final Project"],
+    type: "Course Final Project",
+    link: "/africain/index.html",
+  },
   {
     title: "Task & Permission Management App",
     description: "Full-stack web app for managing tasks, projects, and holiday permissions with worker and admin interfaces.",
@@ -51,10 +59,20 @@ const Projects = () => {
                   <div>
                     <span className="font-mono text-xs text-accent uppercase tracking-wider">{project.type}</span>
                     <h3 className="text-xl font-bold text-foreground mt-1 group-hover:text-primary transition-colors">
-                      {project.title}
+                      {project.link ? (
+                        <a href={project.link} target="_blank" rel="noreferrer" className="hover:underline">
+                          {project.title}
+                        </a>
+                      ) : (
+                        project.title
+                      )}
                     </h3>
                   </div>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noreferrer">
+                      <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </a>
+                  )}
                 </div>
                 <p className="text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">

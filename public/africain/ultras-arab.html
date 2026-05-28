@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultras in the Arab World — الألتراس</title>
+  <style>
+    :root { --bg:#07070d; --card:#0f0f1a; --red:#cc1111; --red-dark:#7a0000; --red-light:#ff5555; --white:#f2f2f2; --muted:#7a7a99; --border:#200808; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,sans-serif; background:var(--bg); color:var(--white); line-height:1.75; }
+    nav { background:#09000a; border-bottom:2px solid var(--red); padding:0 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .nav-brand { font-size:1.05rem; font-weight:bold; color:var(--red); padding:14px 0; text-decoration:none; letter-spacing:3px; text-transform:uppercase; }
+    .nav-links { display:flex; }
+    .nav-links a { color:var(--muted); text-decoration:none; padding:15px 13px; font-size:0.78rem; letter-spacing:0.4px; text-transform:uppercase; transition:color .2s,background .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
+
+    .page-hero { background:linear-gradient(135deg,#00101a 0%,#0a0008 60%,var(--bg) 100%); padding:72px 24px 56px; text-align:center; border-bottom:1px solid var(--border); }
+    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+    .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 40px rgba(204,17,17,.5); margin-bottom:10px; }
+    .page-hero .arabic-title { font-size:2.2rem; color:rgba(204,17,17,.7); direction:rtl; margin-bottom:16px; font-weight:bold; }
+    .page-hero p { color:var(--muted); font-size:0.95rem; max-width:560px; margin:0 auto; }
+
+    .container { max-width:900px; margin:0 auto; padding:60px 24px; }
+    .back-link { display:inline-block; margin-bottom:36px; color:var(--muted); font-size:0.82rem; text-decoration:none; letter-spacing:1px; }
+    .back-link:hover { color:var(--red); }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    h2 { font-size:1.3rem; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    h3 { font-size:1rem; color:#ff8888; margin:18px 0 8px; letter-spacing:0.5px; }
+    p { color:#c8c8d8; margin-bottom:12px; font-size:0.92rem; }
+    strong { color:var(--white); }
+    blockquote { border-left:3px solid var(--red); padding:14px 20px; background:#0f0008; border-radius:0 6px 6px 0; margin:18px 0; font-style:italic; color:#c0c0d0; font-size:0.9rem; }
+    blockquote cite { display:block; margin-top:8px; font-style:normal; color:var(--muted); font-size:0.8rem; }
+
+    /* Arabic word big display */
+    .arabic-display { text-align:center; padding:40px 0; }
+    .ar-word { font-size:5rem; color:var(--red); display:block; text-shadow:0 0 40px rgba(204,17,17,.5); direction:rtl; line-height:1.2; }
+    .ar-transliteration { font-size:1.2rem; color:var(--muted); letter-spacing:4px; text-transform:uppercase; display:block; margin-top:10px; }
+    .ar-meaning { font-size:0.85rem; color:#8888aa; display:block; margin-top:6px; }
+
+    /* Country spread timeline */
+    .spread-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:18px; }
+    .spread-item { background:#0a0008; border:1px solid #1e1028; border-radius:8px; padding:20px 18px; }
+    .spread-item .year { font-size:1.8rem; font-weight:900; color:var(--red); display:block; }
+    .spread-item .country { font-size:0.85rem; color:var(--white); font-weight:bold; margin:4px 0; }
+    .spread-item p { font-size:0.8rem; color:var(--muted); margin:0; }
+
+    /* Characteristics list */
+    .char-list { list-style:none; }
+    .char-list li { padding:12px 0; border-bottom:1px solid #18080a; font-size:0.9rem; color:#c0c0d0; display:flex; gap:12px; }
+    .char-list li:last-child { border-bottom:none; }
+    .char-list .dot { color:var(--red); font-size:1.2rem; flex-shrink:0; }
+
+    .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
+    footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
+    footer a { color:var(--red); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">UAW</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="club.html">Club Africain</a>
+    <a href="ultras-what.html">What is Ultras?</a>
+    <a href="ultras-arab.html" class="active">Arab World</a>
+    <a href="uaw.html">Ultras Winners</a>
+    <a href="groups.html">Groups &amp; Friends</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="label">Tunisia &bull; Morocco &bull; Egypt &bull; The Arab World</p>
+  <div class="arabic-title">الألتراس</div>
+  <h1>Ultras in the Arab World</h1>
+  <p>How the Italian-born ultra culture crossed the Mediterranean and transformed football fandom from Tunis to Cairo.</p>
+</div>
+
+<div class="container">
+  <a class="back-link" href="index.html">&#8592; Back to Home</a>
+
+  <!-- The Arabic word -->
+  <div class="card">
+    <h2>The Arabic Word — الألتراس</h2>
+    <div class="arabic-display">
+      <span class="ar-word">الألتراس</span>
+      <span class="ar-transliteration">Al-Ultraas</span>
+      <span class="ar-meaning">A direct Arabic transliteration of "ultras" — used identically across Tunisia, Morocco, Egypt, and the wider Arab world</span>
+    </div>
+    <p>
+      The Arabic language adopted the word "ultras" through transliteration — converting the Latin sounds
+      into Arabic script: <strong dir="rtl">الألتراس</strong> (Al-Ultraas). The definite article "Al" (الـ)
+      is prefixed in Arabic, giving the term a weight and formality it carries in every stadium from
+      Tunis to Cairo. There is no separate Arabic word for the concept — the culture was imported whole,
+      and the name came with it.
+    </p>
+    <p>
+      Across social media, banners, chants, and fan forums throughout the Arab world, the term is written
+      and spoken the same way: <strong>الألتراس</strong>. It signals immediately that you are part of an
+      organized, committed, principled supporter culture — not just a fan, but something more.
+    </p>
+  </div>
+
+  <!-- Tunisia led the way -->
+  <div class="card">
+    <h2>Tunisia: The Pioneer</h2>
+    <p>
+      It began in <strong>Tunisia in 1995</strong>. When Club Africain supporters formed
+      <strong>African Winners</strong>, they did not simply create a fan club — they created the
+      <em>first ultra group in the entire Arab world and the African continent</em>.
+    </p>
+    <p>
+      Tunisia's exposure to Italian football through satellite television in the 1990s was the catalyst.
+      Young Tunisian fans watched Serie A, absorbed the culture of the Italian curva, and recognized in
+      it something that spoke to them: organized, passionate, visually spectacular, and fiercely loyal
+      support. They took the model and made it their own.
+    </p>
+    <p>
+      Within a decade, Tunisian stadiums had been transformed. The Stade Olympique de Radès went from
+      a venue with ordinary crowd noise to one of the most atmospherically intense grounds in Africa —
+      with multiple organized ultra groups competing to produce the loudest chants and the most
+      spectacular tifos.
+    </p>
+
+    <blockquote>
+      "Tunisia was the gateway through which ultra culture entered the Arab world. What began in Tunis
+      in 1995 had spread across North Africa and the Middle East within fifteen years."
+      <cite>— Research on ultra culture in North Africa, FTDES</cite>
+    </blockquote>
+  </div>
+
+  <!-- Spread across the Arab world -->
+  <div class="card">
+    <h2>How the Culture Spread</h2>
+    <p>The journey of ultra culture through the Arab world followed television, the internet, and personal contact between fans across borders.</p>
+
+    <div class="spread-grid">
+      <div class="spread-item">
+        <span class="year">1995</span>
+        <span class="country">Tunisia</span>
+        <p>African Winners founded — the first ultra group in the Arab world and Africa. Tunisia becomes the cradle of Arab ultra culture.</p>
+      </div>
+      <div class="spread-item">
+        <span class="year">2002</span>
+        <span class="country">Tunisia (2nd wave)</span>
+        <p>Second-generation groups emerge, including Ultras L'Emkachkhines of Espérance. The Tunisian movement consolidates and diversifies.</p>
+      </div>
+      <div class="spread-item">
+        <span class="year">2005</span>
+        <span class="country">Morocco</span>
+        <p>Ultra culture formally arrives in Morocco. Winners 2005 (Wydad, Casablanca) and Green Boys (Raja) are among the first organized groups.</p>
+      </div>
+      <div class="spread-item">
+        <span class="year">2000s</span>
+        <span class="country">Egypt</span>
+        <p>Ultras Ahlawy (Al-Ahly) and Ultras White Knights (Zamalek) emerge as Egypt's dominant groups — among the largest and most politically influential in the Arab world.</p>
+      </div>
+      <div class="spread-item">
+        <span class="year">2000s</span>
+        <span class="country">Algeria</span>
+        <p>Groups form around major clubs including USM Alger and ES Sétif, completing North Africa's ultra landscape.</p>
+      </div>
+      <div class="spread-item">
+        <span class="year">2010s</span>
+        <span class="country">Wider Arab World</span>
+        <p>Ultra culture reaches Jordan, Lebanon, Saudi Arabia, and beyond — carried by social media, satellite sports coverage, and North African diaspora communities.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Characteristics of Arab ultras -->
+  <div class="card">
+    <h2>Characteristics of Arab Ultra Culture</h2>
+    <p>
+      Arab ultra culture adopted the core Italian framework but developed its own distinct characteristics,
+      shaped by the social, political, and cultural context of the region.
+    </p>
+    <ul class="char-list">
+      <li><span class="dot">&#9679;</span><div><strong>Bilingual chants.</strong> Arab ultras mix Arabic with French (in the Maghreb) or English. Chants carry the same emotional weight as Italian originals but in the rhythms of Arabic poetry and dialect.</div></li>
+      <li><span class="dot">&#9679;</span><div><strong>Intense visual culture.</strong> Tifos in Arab stadiums rival anything produced in Europe — massive hand-painted banners, professional-grade choreography, and creative flare sequences have become a point of regional pride.</div></li>
+      <li><span class="dot">&#9679;</span><div><strong>Social function.</strong> In societies where public assembly can be restricted, the stadium and the ultra curve became one of the few spaces where young people could gather, organize, and express collective identity freely.</div></li>
+      <li><span class="dot">&#9679;</span><div><strong>The Arab Spring connection.</strong> Egypt's ultras became globally known during the 2011 revolution. Groups like Ultras Ahlawy and Ultras White Knights used their organizational skills — the same skills learned in the curva — on the streets of Cairo. The stadium had trained them for collective action.</div></li>
+      <li><span class="dot">&#9679;</span><div><strong>Pan-North African brotherhood.</strong> Unlike European ultra culture, which is often intensely local, Arab ultra groups across Tunisia, Morocco, and Algeria maintain strong cross-border friendships — connections that transcend national rivalries in favor of a shared regional identity.</div></li>
+      <li><span class="dot">&#9679;</span><div><strong>The "Winners" network.</strong> The shared name "Winners" — used by Club Africain's Ultras Africain Winners (Tunisia, 1995) and Wydad's Winners 2005 (Morocco, 2005) — is an example of this cross-border solidarity. Red clubs, red jerseys, shared identity, shared passion.</div></li>
+    </ul>
+  </div>
+
+  <!-- Tunisia specifically -->
+  <div class="card">
+    <h2>Tunisia: The Ultra Nation</h2>
+    <p>
+      Tunisia has a richer ultra culture, relative to its population, than almost any country in the Arab world.
+      With four major organized groups across its top clubs and a tradition stretching back to 1995,
+      Tunisian football stadiums are among the most atmospherically intense on the continent.
+    </p>
+    <p>
+      The Stade Olympique de Radès — capacity 60,000 — regularly fills to produce scenes that would not
+      look out of place in Naples, Genoa, or Rome. The Virage Nord and the opposing curves erupt with
+      color, smoke, and sound from the first minute to the last.
+    </p>
+    <p>
+      Beyond atmosphere, Tunisian ultras have been studied by academics and journalists as examples of
+      how organized supporter culture can function as civil society — teaching organizational skills,
+      collective responsibility, and community identity to an entire generation of young people.
+    </p>
+
+    <blockquote>
+      "In Tunisia, the ultra movement is not just about football. It is a form of social organization
+      — perhaps the most vibrant form of youth civic engagement the country has ever produced."
+      <cite>— FTDES (Tunisian Forum for Economic and Social Rights) report on ultra groups</cite>
+    </blockquote>
+  </div>
+
+</div>
+
+<div class="stripe"></div>
+<footer>
+  <p>A tribute to <strong style="color:#cc1111;">Club Africain</strong> and the <strong style="color:#cc1111;">Ultras Africain Winners</strong></p>
+  <p style="margin-top:6px;">Made with passion by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Final Project</p>
+</footer>
+</body>
+</html>

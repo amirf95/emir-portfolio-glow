@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Africain — History &amp; Identity</title>
+  <style>
+    :root { --bg:#07070d; --card:#0f0f1a; --red:#cc1111; --red-dark:#7a0000; --red-light:#ff5555; --white:#f2f2f2; --muted:#7a7a99; --border:#200808; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,sans-serif; background:var(--bg); color:var(--white); line-height:1.75; }
+
+    nav { background:#09000a; border-bottom:2px solid var(--red); padding:0 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .nav-brand { font-size:1.05rem; font-weight:bold; color:var(--red); padding:14px 0; text-decoration:none; letter-spacing:3px; text-transform:uppercase; }
+    .nav-links { display:flex; }
+    .nav-links a { color:var(--muted); text-decoration:none; padding:15px 13px; font-size:0.78rem; letter-spacing:0.4px; text-transform:uppercase; transition:color .2s,background .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
+
+    .page-hero {
+      background: linear-gradient(135deg, #2a0000 0%, #0f0005 60%, var(--bg) 100%);
+      padding: 72px 24px 56px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+    .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 40px rgba(204,17,17,.5); margin-bottom:10px; }
+    .page-hero p { color:var(--muted); font-size:0.95rem; max-width:540px; margin:0 auto; }
+
+    .container { max-width:900px; margin:0 auto; padding:60px 24px; }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    h2 { font-size:1.3rem; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    h3 { font-size:1rem; color:#ff8888; margin:18px 0 8px; letter-spacing:0.5px; }
+    p { color:#c8c8d8; margin-bottom:12px; font-size:0.92rem; }
+    strong { color:var(--white); }
+
+    /* Fact grid */
+    .fact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:16px; margin-bottom:0; }
+    .fact-box { background:#0a0008; border:1px solid #2a0d0d; border-radius:8px; padding:20px 16px; text-align:center; }
+    .fact-box .num { font-size:2.2rem; font-weight:900; color:var(--red); display:block; line-height:1; }
+    .fact-box .lbl { font-size:0.75rem; color:var(--muted); margin-top:6px; letter-spacing:1px; text-transform:uppercase; }
+
+    /* Trophy list */
+    .trophy-list { list-style:none; }
+    .trophy-list li { display:flex; align-items:flex-start; gap:12px; padding:11px 0; border-bottom:1px solid #18080a; font-size:0.9rem; color:#c0c0d0; }
+    .trophy-list li:last-child { border-bottom:none; }
+    .trophy-list .icon { color:var(--red); font-size:1.1rem; flex-shrink:0; margin-top:2px; }
+    .trophy-list strong { color:var(--white); display:block; }
+    .trophy-list span { color:var(--muted); font-size:0.82rem; }
+
+    /* Timeline */
+    .timeline { position:relative; padding-left:28px; }
+    .timeline::before { content:""; position:absolute; left:8px; top:0; bottom:0; width:2px; background:var(--red-dark); }
+    .tl-item { position:relative; margin-bottom:22px; }
+    .tl-item::before { content:""; position:absolute; left:-24px; top:6px; width:10px; height:10px; background:var(--red); border-radius:50%; border:2px solid var(--bg); }
+    .tl-year { font-size:0.75rem; color:var(--red); letter-spacing:2px; font-weight:bold; text-transform:uppercase; }
+    .tl-event { color:#c0c0d0; font-size:0.88rem; margin-top:2px; }
+
+    /* Rivalry box */
+    .rivalry { background:linear-gradient(135deg,#120008,#080010); border:1px solid #3a0020; border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    .rivalry h2 { color:#ff4488; border-bottom-color:#3a0020; }
+
+    .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
+    footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
+    footer a { color:var(--red); text-decoration:none; }
+    .back-link { display:inline-block; margin-bottom:36px; color:var(--muted); font-size:0.82rem; text-decoration:none; letter-spacing:1px; }
+    .back-link:hover { color:var(--red); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">UAW</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="club.html" class="active">Club Africain</a>
+    <a href="ultras-what.html">What is Ultras?</a>
+    <a href="ultras-arab.html">Arab World</a>
+    <a href="uaw.html">Ultras Winners</a>
+    <a href="groups.html">Groups &amp; Friends</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="label">Est. October 4, 1920 &bull; Tunis, Tunisia</p>
+  <h1>Club Africain</h1>
+  <p>Al Ifriki — The African. The pride of Tunis. Red and white, forever.</p>
+</div>
+
+<div class="container">
+  <a class="back-link" href="index.html">&#8592; Back to Home</a>
+
+  <!-- Key facts -->
+  <div class="card">
+    <h2>At a Glance</h2>
+    <div class="fact-grid">
+      <div class="fact-box"><span class="num">1920</span><span class="lbl">Founded</span></div>
+      <div class="fact-box"><span class="num">14</span><span class="lbl">League Titles</span></div>
+      <div class="fact-box"><span class="num">13</span><span class="lbl">Tunisian Cups</span></div>
+      <div class="fact-box"><span class="num">1</span><span class="lbl">CAF Champions League</span></div>
+      <div class="fact-box"><span class="num">1991</span><span class="lbl">Africa Champions</span></div>
+    </div>
+  </div>
+
+  <!-- History -->
+  <div class="card">
+    <h2>A Century of History</h2>
+    <p>
+      Club Africain was officially founded on <strong>October 4, 1920</strong>, in Tunis, Tunisia —
+      born from the spirit of "Stade Africain," an earlier sports association active since 1915.
+      When Stade Africain was dissolved in 1918, its players, colors, and soul were carried forward
+      into what became Club Africain.
+    </p>
+    <p>
+      Wearing <strong>red and white</strong>, Club Africain rose to become one of the two dominant forces
+      in Tunisian football — the other being their fierce rival, Espérance Sportive de Tunis. The club's
+      nickname is <strong>"Al Ifriki"</strong> — simply, "The African" — a name that carries the weight
+      of continental ambition and cultural identity.
+    </p>
+    <p>
+      In <strong>1991</strong>, Club Africain etched their name into continental history by winning the
+      <strong>CAF African Cup of Champions Clubs</strong> — the precursor to today's CAF Champions League —
+      becoming the <em>first Tunisian club ever to lift the continental crown</em>. They defeated Uganda's
+      Nakivubo Villa SC 7–3 on aggregate in the final. The following year, they won the
+      <strong>Afro-Asian Club Championship (1992)</strong>, cementing their status as Africa's finest.
+    </p>
+
+    <h3>Timeline of Major Milestones</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="tl-year">1920</span>
+        <p class="tl-event">Club Africain officially founded in Tunis on October 4.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1971</span>
+        <p class="tl-event">Wins the Maghreb Cup Winners' Cup — the <strong>first international trophy</strong> ever won by a Tunisian club.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1974–76</span>
+        <p class="tl-event">Three consecutive Maghreb Champions Cup titles — dominance across North Africa.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1991</span>
+        <p class="tl-event">Wins the <strong>CAF African Cup of Champions Clubs</strong> — the greatest achievement in club history. First Tunisian continental champions.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1992</span>
+        <p class="tl-event">Wins the Afro-Asian Club Championship, defeating the best of Asia to claim global club status.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1995</span>
+        <p class="tl-event">Wins the Arab Cup Winners' Cup. The same year, <strong>Ultras Africain Winners</strong> is founded — the first ultra group in Tunisia and the Arab world.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1997</span>
+        <p class="tl-event">Wins the <strong>Arab Champions League</strong>.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2008, 2010</span>
+        <p class="tl-event">Wins the North African Champions Cup twice.</p>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2026</span>
+        <p class="tl-event">Wins the Tunisian League Championship in dramatic fashion — sealing the title with a decisive derby goal in the 104th minute against Espérance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trophy cabinet -->
+  <div class="card">
+    <h2>Trophy Cabinet</h2>
+    <ul class="trophy-list">
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Tunisian League Championship — 14 titles</strong><span>Most recently: 2026 (won in the 104th minute of the final-day derby)</span></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Tunisian Cup — 13 titles</strong><span>Among the most successful clubs in Tunisian Cup history</span></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>CAF African Cup of Champions Clubs — 1 title (1991)</strong><span>First Tunisian and first North African club to win the premier African club competition</span></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Afro-Asian Club Championship — 1 title (1992)</strong></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Arab Champions League — 1 title (1997)</strong></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Arab Cup Winners' Cup — 1 title (1995)</strong></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Maghreb Champions Cup — 3 titles (1974, 1975, 1976)</strong></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Maghreb Cup Winners' Cup — 1 title (1971)</strong><span>The very first international trophy won by any Tunisian club</span></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>North African Champions Cup — 2 titles (2008, 2010)</strong></div>
+      </li>
+      <li>
+        <span class="icon">&#127942;</span>
+        <div><strong>Tunisian Supercup — 3 titles</strong></div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Stadium -->
+  <div class="card">
+    <h2>The Stadium</h2>
+    <h3>Stade Olympique de Rad&egrave;s — Primary Venue</h3>
+    <p>
+      Club Africain play their home matches at the <strong>Stade Olympique de Radès</strong>, Tunisia's
+      national stadium with a capacity of approximately <strong>60,000 supporters</strong>. It is one of
+      the largest and most modern stadiums in Africa, shared with the Tunisian national team.
+    </p>
+    <p>
+      On derby night, the Stade de Radès becomes one of the most electric atmospheres in all of African
+      football. The Virage Nord — the north curve — belongs to the red and white ultras. The noise,
+      the smoke, the tifos: this is where the Ultras Africain Winners write history every matchday.
+    </p>
+    <h3>El Menzah &amp; Zouiten</h3>
+    <p>
+      The club also uses <strong>Stade Olympique d'El Menzah</strong> (capacity ~39,858) as a secondary venue,
+      and the historic <strong>Stade Chedly Zouiten</strong> holds a place in the club's earlier history.
+    </p>
+  </div>
+
+  <!-- Rivalry -->
+  <div class="rivalry">
+    <h2>The Derby Tunisois</h2>
+    <p>
+      No rivalry in Tunisian football — perhaps in all of African football — burns as intensely as the
+      <strong>Derby Tunisois</strong>: Club Africain vs. Espérance Sportive de Tunis (EST).
+    </p>
+    <p>
+      Two clubs, one city, one stadium. On derby day, Tunis splits in two. The red and white of Al Ifriki
+      against the blood and gold of Taraji. Streets go quiet before kickoff. The result shapes an entire
+      week — sometimes an entire season.
+    </p>
+    <p>
+      The 2026 title-winning moment encapsulates everything: a league championship sealed with a goal in
+      <strong>the 104th minute of the final-day derby</strong> — beating Espérance on their shared pitch
+      to claim the championship. There is no more fitting way for Club Africain to win.
+    </p>
+    <p style="color:#ff8888; font-style:italic; margin-top:14px;">
+      "When the derby comes, the city stops. When Africain wins the derby, the city sings."
+    </p>
+  </div>
+
+</div>
+
+<div class="stripe"></div>
+<footer>
+  <p>A tribute to <strong style="color:#cc1111;">Club Africain</strong> and the <strong style="color:#cc1111;">Ultras Africain Winners</strong></p>
+  <p style="margin-top:6px;">Made with passion by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Final Project</p>
+</footer>
+</body>
+</html>

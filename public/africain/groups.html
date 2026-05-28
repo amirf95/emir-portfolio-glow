@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tunisian Ultra Groups &amp; Friendships</title>
+  <style>
+    :root { --bg:#07070d; --card:#0f0f1a; --red:#cc1111; --red-dark:#7a0000; --red-light:#ff5555; --white:#f2f2f2; --muted:#7a7a99; --border:#200808; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,sans-serif; background:var(--bg); color:var(--white); line-height:1.75; }
+    nav { background:#09000a; border-bottom:2px solid var(--red); padding:0 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .nav-brand { font-size:1.05rem; font-weight:bold; color:var(--red); padding:14px 0; text-decoration:none; letter-spacing:3px; text-transform:uppercase; }
+    .nav-links { display:flex; }
+    .nav-links a { color:var(--muted); text-decoration:none; padding:15px 13px; font-size:0.78rem; letter-spacing:0.4px; text-transform:uppercase; transition:color .2s,background .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
+
+    .page-hero { background:linear-gradient(135deg,#0a1000 0%,#100010 60%,var(--bg) 100%); padding:72px 24px 56px; text-align:center; border-bottom:1px solid var(--border); }
+    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
+    .page-hero h1 { font-size:clamp(2rem,5vw,3.5rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 40px rgba(204,17,17,.5); margin-bottom:10px; }
+    .page-hero p { color:var(--muted); font-size:0.95rem; max-width:560px; margin:0 auto; }
+
+    .container { max-width:940px; margin:0 auto; padding:60px 24px; }
+    .back-link { display:inline-block; margin-bottom:36px; color:var(--muted); font-size:0.82rem; text-decoration:none; letter-spacing:1px; }
+    .back-link:hover { color:var(--red); }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    h2 { font-size:1.3rem; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    h3 { font-size:1rem; color:#ff8888; margin:18px 0 8px; }
+    p { color:#c8c8d8; margin-bottom:12px; font-size:0.92rem; }
+    strong { color:var(--white); }
+    blockquote { border-left:3px solid var(--red); padding:14px 20px; background:#0f0008; border-radius:0 6px 6px 0; margin:18px 0; font-style:italic; color:#c0c0d0; font-size:0.9rem; }
+    blockquote cite { display:block; margin-top:8px; font-style:normal; color:var(--muted); font-size:0.8rem; }
+
+    /* Group cards */
+    .groups-grid { display:grid; grid-template-columns:1fr; gap:20px; }
+    .group-card {
+      background:#0a0010;
+      border-radius:10px;
+      padding:28px 30px;
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:24px;
+      align-items:start;
+    }
+    .group-card.africain { border:1px solid #3a0010; background:linear-gradient(135deg,#150005,#0a0010); }
+    .group-card.esperance { border:1px solid #0010 3a; background:linear-gradient(135deg,#050015,#0a0010); border-color:#1a003a; }
+    .group-card.sahel { border:1px solid #003a10; background:linear-gradient(135deg,#001505,#0a0010); }
+    .group-card.sfax { border:1px solid #1a1a00; background:linear-gradient(135deg,#101000,#0a0010); }
+    .group-num { font-size:3.5rem; font-weight:900; opacity:.4; line-height:1; }
+    .group-card.africain .group-num { color:var(--red); }
+    .group-card.esperance .group-num { color:#aa66ff; }
+    .group-card.sahel .group-num { color:#22cc66; }
+    .group-card.sfax .group-num { color:#ddcc00; }
+    .group-name { font-size:1.3rem; font-weight:bold; color:var(--white); margin-bottom:4px; }
+    .group-club { font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px; }
+    .group-card.africain .group-club { color:#ff8888; }
+    .group-card.esperance .group-club { color:#cc99ff; }
+    .group-card.sahel .group-club { color:#66ff99; }
+    .group-card.sfax .group-club { color:#ffee66; }
+    .group-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .tag { font-size:0.72rem; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:2px; }
+    .tag-red { background:#2a0000; border:1px solid #5a0000; color:#ff8888; }
+    .tag-purple { background:#1a0030; border:1px solid #3a0060; color:#cc99ff; }
+    .tag-green { background:#001a08; border:1px solid #003a10; color:#66cc88; }
+    .tag-yellow { background:#1a1800; border:1px solid #3a3400; color:#ddcc00; }
+
+    /* Summary table */
+    table { width:100%; border-collapse:collapse; margin-top:6px; font-size:0.88rem; }
+    th { background:#0a0000; color:var(--red); padding:12px 16px; text-align:left; border:1px solid var(--border); letter-spacing:1px; text-transform:uppercase; font-size:0.75rem; }
+    td { padding:11px 16px; border:1px solid #18080a; color:#c0c0d0; }
+    tr:nth-child(even) td { background:#0a0008; }
+
+    /* Friendship section */
+    .friendship {
+      background:linear-gradient(135deg,#1a0000,#000a1a);
+      border:1px solid #3a1030;
+      border-radius:12px;
+      padding:36px;
+      margin-bottom:28px;
+    }
+    .friendship h2 { color:#ff6688; border-bottom-color:#3a1030; }
+    .friendship-visual { display:flex; align-items:center; justify-content:center; gap:24px; padding:32px 0; flex-wrap:wrap; }
+    .fv-club { text-align:center; }
+    .fv-club .club-name { font-size:1rem; font-weight:bold; color:var(--white); letter-spacing:2px; text-transform:uppercase; }
+    .fv-club .club-group { font-size:0.78rem; color:var(--muted); margin-top:4px; letter-spacing:1px; }
+    .fv-club .flag { font-size:0.75rem; color:#888; margin-top:2px; }
+    .fv-heart { font-size:2.5rem; color:var(--red); text-shadow:0 0 20px rgba(204,17,17,.6); }
+    .fv-connector { text-align:center; padding:0 8px; }
+    .fv-connector .line { width:60px; height:2px; background:linear-gradient(90deg,var(--red),#880044); margin:0 auto; }
+    .fv-connector .label { font-size:0.7rem; color:var(--muted); letter-spacing:2px; text-transform:uppercase; margin-top:6px; }
+
+    .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
+    footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
+    footer a { color:var(--red); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">UAW</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="club.html">Club Africain</a>
+    <a href="ultras-what.html">What is Ultras?</a>
+    <a href="ultras-arab.html">Arab World</a>
+    <a href="uaw.html">Ultras Winners</a>
+    <a href="groups.html" class="active">Groups &amp; Friends</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="label">Tunisia &bull; Morocco &bull; Brotherhood</p>
+  <h1>The Four Great Groups<br>&amp; The Friendship</h1>
+  <p>Tunisia's four defining ultra groups, and the red thread connecting African Winners to their brothers in Casablanca.</p>
+</div>
+
+<div class="container">
+  <a class="back-link" href="index.html">&#8592; Back to Home</a>
+
+  <!-- Intro -->
+  <div class="card">
+    <h2>Tunisia's Ultra Scene</h2>
+    <p>
+      Tunisia has the richest ultra tradition in the Arab world — a heritage stretching back to
+      <strong>1995</strong> when African Winners invented the form. Today, four organized ultra groups
+      define the identity of Tunisian football's biggest clubs. Each group has its own culture,
+      its own stadium stand, its own visual language — but all share the same founding principles
+      brought to Tunisia by African Winners three decades ago.
+    </p>
+  </div>
+
+  <!-- The 4 groups -->
+  <div class="groups-grid">
+
+    <!-- 1: African Winners -->
+    <div class="group-card africain">
+      <div class="group-num">01</div>
+      <div>
+        <div class="group-name">African Winners</div>
+        <div class="group-club">Club Africain &bull; Tunis</div>
+        <p style="color:#c0b0b0; font-size:0.88rem;">
+          The original. Founded in <strong>1995</strong>, African Winners was the first ultra group in
+          Tunisia and the entire Arab world. They introduced tifo culture, organized chanting, and the
+          concept of the ultra curve to North African football. Every ultra group in the Arab world
+          exists in the shadow of what African Winners built in the north stand of Stade de Radès.
+          <br><br>
+          Their name references Club Africain's historic 1991 CAF Champions League title — they are
+          the supporters of Africa's continental winners, and they carry that identity with pride.
+        </p>
+        <div class="group-tags">
+          <span class="tag tag-red">Founded 1995</span>
+          <span class="tag tag-red">Virage Nord — Stade de Radès</span>
+          <span class="tag tag-red">First in the Arab World</span>
+          <span class="tag tag-red">Red &amp; White</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: Ultras L'Emkachkhines -->
+    <div class="group-card esperance">
+      <div class="group-num">02</div>
+      <div>
+        <div class="group-name">Ultras L'Emkachkhines</div>
+        <div class="group-club">Espérance Sportive de Tunis &bull; Tunis</div>
+        <p style="color:#c0b0d0; font-size:0.88rem;">
+          Founded in <strong>2002</strong>, Ultras L'Emkachkhines (ULE) are the organized ultra wing of
+          Espérance Sportive de Tunis — Club Africain's great rivals. The name means "those who are
+          crazy about it" in Tunisian Arabic slang. They modeled their early structure on Italian ultra
+          groups, specifically the Curva Sud of AS Roma, adopting fierce visual identity and
+          sophisticated tifo design.
+          <br><br>
+          Their rivalry with African Winners in the north and south stands of Stade de Radès produces
+          some of the most intense ultra atmospheres in African football. The ULE use blood-and-gold
+          colors — the "Sang et Or" of Espérance — against the red and white of Africain.
+        </p>
+        <div class="group-tags">
+          <span class="tag tag-purple">Founded 2002</span>
+          <span class="tag tag-purple">Espérance Sportive</span>
+          <span class="tag tag-purple">Blood &amp; Gold</span>
+          <span class="tag tag-purple">Rivals of African Winners</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3: Brigades Rouges -->
+    <div class="group-card sahel">
+      <div class="group-num">03</div>
+      <div>
+        <div class="group-name">Brigades Rouges</div>
+        <div class="group-club">Étoile Sportive du Sahel &bull; Sousse</div>
+        <p style="color:#b0d0b0; font-size:0.88rem;">
+          The principal ultra group of <strong>Étoile Sportive du Sahel</strong> (ESS), the major club
+          of Sousse on Tunisia's eastern coast. The name "Brigades Rouges" — Red Brigades — carries
+          deliberate historical resonance, invoking both the political passion of the name and the
+          club's red identity. They occupy the stand at Stade Olympique de Sousse.
+          <br><br>
+          ESS is one of Tunisia's most successful clubs and a serious continental competitor —
+          their ultra support reflects that ambition. Brigades Rouges are known for passionate
+          vocal support and a strong presence on away trips, reinforcing the Sahel identity across
+          Tunisian stadiums.
+        </p>
+        <div class="group-tags">
+          <span class="tag tag-green">Étoile du Sahel</span>
+          <span class="tag tag-green">Sousse</span>
+          <span class="tag tag-green">Stade Olympique de Sousse</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4: Fighters -->
+    <div class="group-card sfax">
+      <div class="group-num">04</div>
+      <div>
+        <div class="group-name">Fighters</div>
+        <div class="group-club">Club Sportif Sfaxien &bull; Sfax</div>
+        <p style="color:#d0d0b0; font-size:0.88rem;">
+          The ultra group of <strong>Club Sportif Sfaxien</strong> (CSS), the flagship club of Sfax —
+          Tunisia's second city and its economic capital. The name "Fighters" reflects both the
+          combative spirit of ultra support and the identity of Sfax as a city that has always
+          fought for its place against the dominance of Tunis-based clubs.
+          <br><br>
+          CSS is a historically significant club with multiple Tunisian titles and African campaigns.
+          Their Fighters group has built a loyal support culture in a football environment dominated
+          by the Tunis big two, which makes their dedication all the more admirable — they fight
+          for recognition, for the south, for Sfax.
+        </p>
+        <div class="group-tags">
+          <span class="tag tag-yellow">Club Sportif Sfaxien</span>
+          <span class="tag tag-yellow">Sfax</span>
+          <span class="tag tag-yellow">The South</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary table -->
+  <div class="card">
+    <h2>Summary — The Four Groups</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Group</th>
+          <th>Club</th>
+          <th>City</th>
+          <th>Founded</th>
+          <th>Colors</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong style="color:#ff8888;">African Winners</strong></td>
+          <td>Club Africain</td>
+          <td>Tunis</td>
+          <td>1995 — First in Arab world</td>
+          <td>Red &amp; White</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong style="color:#cc99ff;">Ultras L'Emkachkhines</strong></td>
+          <td>Espérance Sportive</td>
+          <td>Tunis</td>
+          <td>2002</td>
+          <td>Blood &amp; Gold</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong style="color:#66cc88;">Brigades Rouges</strong></td>
+          <td>Étoile du Sahel</td>
+          <td>Sousse</td>
+          <td>Mid-2000s</td>
+          <td>Red &amp; White</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong style="color:#ddcc00;">Fighters</strong></td>
+          <td>CS Sfaxien</td>
+          <td>Sfax</td>
+          <td>Mid-2000s</td>
+          <td>Black &amp; White</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- The Friendship -->
+  <div class="friendship">
+    <h2>&#129309; The Friendship — Winners &amp; Winners</h2>
+
+    <div class="friendship-visual">
+      <div class="fv-club">
+        <div class="club-name">Club Africain</div>
+        <div class="club-group">African Winners</div>
+        <div class="flag">Tunis, Tunisia &bull; Since 1995</div>
+      </div>
+      <div class="fv-connector">
+        <div class="line"></div>
+        <div class="fv-heart" style="margin:10px 0;">&#10084;</div>
+        <div class="line"></div>
+        <div class="label">Brothers</div>
+      </div>
+      <div class="fv-club">
+        <div class="club-name">Wydad Athletic Club</div>
+        <div class="club-group">Winners 2005</div>
+        <div class="flag">Casablanca, Morocco &bull; Since 2005</div>
+      </div>
+    </div>
+
+    <h3>Winners 2005 — Wydad Casablanca</h3>
+    <p>
+      <strong>Wydad Athletic Club</strong> (WAC) is the great red club of Casablanca, Morocco —
+      one of the most successful clubs in African football history, winners of multiple CAF Champions
+      League titles. Their colors: <strong>red and white</strong>. Their identity: les Rouges de Casablanca.
+    </p>
+    <p>
+      In <strong>2005</strong>, the year ultra culture formally arrived in Morocco, Wydad supporters
+      organized themselves as <strong>Winners 2005</strong>. The name was not chosen by accident.
+      They knew the tradition they were entering — a North African ultra world where the name
+      "Winners" already carried weight, where Club Africain's African Winners had been flying that
+      banner for a decade.
+    </p>
+    <p>
+      Winners 2005 have become one of the most decorated ultra groups in the world. They have been
+      named <strong>World's Best Ultras</strong> four times by Ultras World magazine (2015, 2017,
+      2019, 2022). Their tifos are legendary — massive, creative, emotionally powerful. They have
+      raised the standard of Moroccan and African ultra culture to a global level.
+    </p>
+
+    <h3>The Connection</h3>
+    <p>
+      The bond between the African Winners tradition and Winners 2005 is built on multiple layers:
+    </p>
+    <p>
+      <strong>The name.</strong> "Winners" — used by both groups, separated by a decade. In the North
+      African ultra world, names carry history. Using "Winners" signals knowledge, respect, and lineage.
+    </p>
+    <p>
+      <strong>The colors.</strong> Club Africain and Wydad Casablanca both wear <strong>red and white</strong>.
+      Two red clubs. Two red-and-white curves. Two groups who understand that red is not just a color —
+      it is a commitment.
+    </p>
+    <p>
+      <strong>The continent.</strong> Both clubs have won the CAF Champions League. African football's
+      greatest clubs, supported by African football's most passionate fans. The respect is mutual and
+      earned.
+    </p>
+    <p>
+      <strong>The brotherhood.</strong> North African ultra culture has always been more porous than its
+      European counterpart — connections across Tunisia, Morocco, and Algeria are natural, celebrated,
+      and proudly displayed. When Winners 2005 and the African Winners world meet, they meet as
+      peers who know the same songs in different dialects.
+    </p>
+
+    <blockquote>
+      "Two red clubs. Two red curves. Two groups who chose the same word — Winners.
+      In North Africa, that is not a coincidence. It is a conversation across a decade."
+    </blockquote>
+
+    <h3>Wydad Athletic Club — A Portrait</h3>
+    <p>
+      Founded in <strong>1937</strong> in Casablanca, Wydad is one of the oldest and most decorated
+      clubs in Morocco and Africa. They have won the CAF Champions League multiple times, including
+      recent continental triumphs, and are perennial Moroccan league champions. Their stadium —
+      the Stade Mohamed V in Casablanca — fills with red and white on matchday, mirroring the
+      colors and passion of the north curve in Radès.
+    </p>
+    <p>
+      Casablanca is to Moroccan football what Tunis is to Tunisian football: the capital of passion,
+      the city where a football match is never just a football match. It is identity. It is belonging.
+      It is red, and it will always be red.
+    </p>
+  </div>
+
+</div>
+
+<div class="stripe"></div>
+<footer>
+  <p>A tribute to <strong style="color:#cc1111;">Club Africain</strong> and the <strong style="color:#cc1111;">Ultras Africain Winners</strong></p>
+  <p style="margin-top:6px;">Made with passion by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Final Project</p>
+</footer>
+</body>
+</html>

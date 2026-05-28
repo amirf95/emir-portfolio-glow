@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultras Africain Winners — The Group</title>
+  <style>
+    :root { --bg:#07070d; --card:#0f0f1a; --red:#cc1111; --red-dark:#7a0000; --red-light:#ff5555; --white:#f2f2f2; --muted:#7a7a99; --border:#200808; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:Arial,sans-serif; background:var(--bg); color:var(--white); line-height:1.75; }
+    nav { background:#09000a; border-bottom:2px solid var(--red); padding:0 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .nav-brand { font-size:1.05rem; font-weight:bold; color:var(--red); padding:14px 0; text-decoration:none; letter-spacing:3px; text-transform:uppercase; }
+    .nav-links { display:flex; }
+    .nav-links a { color:var(--muted); text-decoration:none; padding:15px 13px; font-size:0.78rem; letter-spacing:0.4px; text-transform:uppercase; transition:color .2s,background .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
+
+    .page-hero {
+      min-height:50vh;
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      padding:72px 24px 60px;
+      text-align:center;
+      background:radial-gradient(ellipse at 60% 40%,#3a0000 0%,#120008 40%,var(--bg) 100%);
+      border-bottom:1px solid var(--border);
+      position:relative;
+      overflow:hidden;
+    }
+    .page-hero::before {
+      content:"";
+      position:absolute; inset:0;
+      background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(204,17,17,.03) 30px,rgba(204,17,17,.03) 31px);
+    }
+    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:14px; }
+    .page-hero .arabic-title { font-size:2rem; color:rgba(255,100,100,.6); direction:rtl; margin-bottom:12px; }
+    .page-hero h1 { font-size:clamp(2.4rem,6vw,4.5rem); font-weight:900; letter-spacing:3px; text-transform:uppercase; color:var(--white); text-shadow:0 0 60px rgba(204,17,17,.7); margin-bottom:10px; }
+    .page-hero .founded { display:inline-block; background:#2a0000; border:1px solid var(--red-dark); color:#ff9999; font-size:0.88rem; letter-spacing:2px; padding:7px 20px; border-radius:2px; margin-top:10px; }
+
+    .container { max-width:900px; margin:0 auto; padding:60px 24px; }
+    .back-link { display:inline-block; margin-bottom:36px; color:var(--muted); font-size:0.82rem; text-decoration:none; letter-spacing:1px; }
+    .back-link:hover { color:var(--red); }
+    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    h2 { font-size:1.3rem; color:var(--red); letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    h3 { font-size:1rem; color:#ff8888; margin:18px 0 8px; }
+    p { color:#c8c8d8; margin-bottom:12px; font-size:0.92rem; }
+    strong { color:var(--white); }
+    blockquote { border-left:3px solid var(--red); padding:14px 20px; background:#0f0008; border-radius:0 6px 6px 0; margin:18px 0; font-style:italic; color:#c0c0d0; font-size:0.9rem; }
+    blockquote cite { display:block; margin-top:8px; font-style:normal; color:var(--muted); font-size:0.8rem; }
+
+    /* Big stat */
+    .big-stat { text-align:center; padding:28px; background:#0a0000; border:1px solid var(--red-dark); border-radius:10px; margin-bottom:28px; }
+    .big-stat .num { font-size:5rem; font-weight:900; color:var(--red); display:block; line-height:1; text-shadow:0 0 30px rgba(204,17,17,.5); }
+    .big-stat .lbl { color:var(--muted); font-size:0.85rem; letter-spacing:3px; text-transform:uppercase; margin-top:8px; display:block; }
+    .big-stat .sub { color:#ff8888; font-size:0.9rem; margin-top:10px; font-style:italic; display:block; }
+
+    /* Identity pillars */
+    .pillars { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-top:18px; }
+    .pillar { background:#0a0000; border:1px solid #2a0808; border-radius:8px; padding:22px 18px; text-align:center; }
+    .pillar .icon { font-size:2rem; display:block; margin-bottom:10px; }
+    .pillar h4 { color:var(--red); font-size:0.85rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:8px; }
+    .pillar p { font-size:0.8rem; color:var(--muted); margin:0; }
+
+    /* Being a Winner */
+    .winner-list { list-style:none; }
+    .winner-list li { padding:14px 0; border-bottom:1px solid #18080a; font-size:0.9rem; color:#c0c0d0; display:flex; gap:14px; align-items:flex-start; }
+    .winner-list li:last-child { border-bottom:none; }
+    .winner-list .w-icon { color:var(--red); font-size:1.2rem; flex-shrink:0; }
+
+    /* Virage Nord highlight */
+    .virage { background:linear-gradient(135deg,#1a0000,#080010); border:1px solid #3a0010; border-radius:10px; padding:32px 36px; margin-bottom:28px; }
+    .virage h2 { color:#ff6666; border-bottom-color:#3a0010; }
+
+    .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
+    footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
+    footer a { color:var(--red); text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">UAW</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="club.html">Club Africain</a>
+    <a href="ultras-what.html">What is Ultras?</a>
+    <a href="ultras-arab.html">Arab World</a>
+    <a href="uaw.html" class="active">Ultras Winners</a>
+    <a href="groups.html">Groups &amp; Friends</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="label">Tunis &bull; Tunisia &bull; Virage Nord</p>
+  <div class="arabic-title">أفريكان وينرز</div>
+  <h1>Ultras Africain<br>Winners</h1>
+  <span class="founded">Founded 1995 &bull; First in Tunisia &bull; First in the Arab World</span>
+</div>
+
+<div class="container">
+  <a class="back-link" href="index.html">&#8592; Back to Home</a>
+
+  <!-- The founding -->
+  <div class="big-stat">
+    <span class="num">1995</span>
+    <span class="lbl">Year Founded</span>
+    <span class="sub">The year ultra culture was born in Tunisia — and in the entire Arab world</span>
+  </div>
+
+  <div class="card">
+    <h2>The Pioneers</h2>
+    <p>
+      In <strong>1995</strong>, a group of Club Africain supporters in Tunis did something that had
+      never been done before in their country, or anywhere in the Arab world: they organized themselves
+      into the first ultra group in North Africa and the Arab world — <strong>African Winners</strong>.
+    </p>
+    <p>
+      Inspired by the Italian ultra culture they had seen on satellite television, they took the concept —
+      the organized curve, the tifo, the capo, the chants — and transplanted it into Tunisian football.
+      What grew from that seed transformed the atmosphere of Tunisian stadiums forever.
+    </p>
+    <p>
+      African Winners did not just create a fan group. They created a movement. Every ultra group
+      that followed in Tunisia — and every ultra group across the Arab world — stands on the foundation
+      they laid in 1995.
+    </p>
+
+    <blockquote>
+      "TIFO 3D By African Winners 1995 — the first ultras group in Tunisia, which belongs to Club Africain."
+      <cite>— Les Rebelles du Foot (Facebook page dedicated to North African ultra culture)</cite>
+    </blockquote>
+  </div>
+
+  <!-- The name: Winners -->
+  <div class="card">
+    <h2>Why "Winners"?</h2>
+    <p>
+      The name carries weight. Club Africain had, just four years before the group's founding,
+      achieved the greatest result in Tunisian football history: winning the
+      <strong>1991 CAF African Cup of Champions Clubs</strong> — the premier continental club competition,
+      predecessor to today's CAF Champions League. They were <em>the winners of Africa</em>.
+    </p>
+    <p>
+      The name "African Winners" is both a statement of fact and a declaration of identity.
+      <strong>We support the African winners.</strong> We are the winners. The name links the group
+      permanently to the club's greatest continental triumph, carrying the memory of 1991 into every
+      match, every tifo, every chant.
+    </p>
+    <p>
+      It is also — and this matters — a name that travels. When the Moroccan ultra group of Wydad
+      Casablanca chose the name <strong>Winners 2005</strong> a decade later, they knew what they were
+      referencing: a North African ultra tradition, a red football club, a shared sense of ambition.
+      Winners know each other.
+    </p>
+  </div>
+
+  <!-- The Virage Nord -->
+  <div class="virage">
+    <h2>The Virage Nord — Home of the Winners</h2>
+    <p>
+      At the <strong>Stade Olympique de Radès</strong>, the north curve — the <strong>Virage Nord</strong>
+      — belongs to Club Africain's ultra groups. This is the territory of African Winners and their
+      fellow organized groups: Leaders Clubistes, North Vandals, Dodgers Clubistes, and others who share
+      the same red and white identity.
+    </p>
+    <p>
+      When the teams emerge from the tunnel, the Virage Nord erupts. The capo, back to the pitch,
+      facing his own fans, arms raised — directing the opening chant that rolls across the entire stand
+      and eventually shakes the whole stadium. The tifo unfurls. Flares ignite. Sixty thousand people
+      feel it simultaneously.
+    </p>
+    <p>
+      On derby night — Club Africain vs. Espérance — the Virage Nord reaches its peak. The noise,
+      the smoke, the sheer collective will directed at ninety minutes of football. This is what
+      African Winners built. This is what they maintain, year after year, result after result.
+    </p>
+    <p style="color:#ff8888; font-style:italic; margin-top:14px;">
+      "The north curve never sits down. Not at 3-0 up. Not at 0-3 down. Never."
+    </p>
+  </div>
+
+  <!-- Identity pillars -->
+  <div class="card">
+    <h2>The Identity of African Winners</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="icon">&#127937;</span>
+        <h4>Tifo</h4>
+        <p>African Winners introduced the concept of organized tifo to Tunisian football. Giant banners, card sections, coordinated color — they built the visual vocabulary of Tunisian ultra culture.</p>
+      </div>
+      <div class="pillar">
+        <span class="icon">&#128308;</span>
+        <h4>Red &amp; White</h4>
+        <p>The colors of Club Africain. Every banner, scarf, and flare signal the same identity: red passion, white pride. The colors that represent Tunis on the African continent.</p>
+      </div>
+      <div class="pillar">
+        <span class="icon">&#127756;</span>
+        <h4>Pioneer Status</h4>
+        <p>First in Tunisia. First in the Arab world. African Winners carry this history not as a trophy, but as a responsibility — the responsibility to maintain the highest standards of support.</p>
+      </div>
+      <div class="pillar">
+        <span class="icon">&#129309;</span>
+        <h4>Brotherhood</h4>
+        <p>Inside the Virage Nord, group differences fade. Outside the stadium, the bond continues — away trips, tifos, fundraising, and the solidarity that defines ultra brotherhood across borders.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- What it means to be a Winner -->
+  <div class="card">
+    <h2>What It Means to Be a Winner</h2>
+    <ul class="winner-list">
+      <li><span class="w-icon">&#9733;</span><div><strong>You chose Club Africain.</strong> Not because they were winning the league that year. Not because it was fashionable. Because something in the red and white called to you, and you answered.</div></li>
+      <li><span class="w-icon">&#9733;</span><div><strong>You show up.</strong> Home games, away games. Cold nights in Radès. Hostile grounds in other cities. When the rest of the world stays home, you go.</div></li>
+      <li><span class="w-icon">&#9733;</span><div><strong>You contribute.</strong> Painting banners until 3am before a derby. Helping carry tifo materials. Funding flares out of your own pocket. The Virage Nord does not build itself.</div></li>
+      <li><span class="w-icon">&#9733;</span><div><strong>You remember 1991.</strong> The CAF Champions League title is not ancient history — it is the living heart of this group's identity. "Winners" is not just a name. It is a claim about what Club Africain is, and what it will be again.</div></li>
+      <li><span class="w-icon">&#9733;</span><div><strong>You carry the tradition.</strong> African Winners was the first. You are part of a lineage that started in 1995 and extends forward to every future generation that stands in the Virage Nord and sings for the red and white.</div></li>
+    </ul>
+
+    <blockquote style="margin-top:24px; font-size:1rem; border-left-width:4px;">
+      "We are not just fans. We are the memory of 1991. We are the sound of the north curve.
+      We are African Winners — the first, and forever."
+    </blockquote>
+  </div>
+
+</div>
+
+<div class="stripe"></div>
+<footer>
+  <p>A tribute to <strong style="color:#cc1111;">Club Africain</strong> and the <strong style="color:#cc1111;">Ultras Africain Winners</strong></p>
+  <p style="margin-top:6px;">Made with passion by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Final Project</p>
+</footer>
+</body>
+</html>
