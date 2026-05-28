@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Survey Results</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0d1a;
+            color: #dde0f4;
+            padding: 40px 20px 60px;
+            line-height: 1.7;
+        }
+
+        /* ── Header ── */
+        header {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+        header h1 {
+            font-size: 2.1rem;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        header p {
+            color: #7090a0;
+            font-style: italic;
+        }
+
+        /* ── Section cards ── */
+        .card {
+            max-width: 780px;
+            margin: 0 auto 32px;
+            background-color: #13132a;
+            border: 1px solid #1e2e44;
+            border-radius: 12px;
+            padding: 28px 34px;
+            box-shadow: 0 4px 20px rgba(56, 189, 248, 0.07);
+        }
+
+        h2 {
+            font-size: 1.15rem;
+            color: #38bdf8;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #1e2e44;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: #93c5fd;
+            margin: 18px 0 10px;
+        }
+
+        p { margin-bottom: 10px; }
+
+        /* ── Summary stat boxes ── */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 6px;
+        }
+        .stat-box {
+            background-color: #0f1f35;
+            border: 1px solid #1e3550;
+            border-radius: 8px;
+            padding: 18px 14px;
+            text-align: center;
+        }
+        .stat-box .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #38bdf8;
+            display: block;
+        }
+        .stat-box .label {
+            font-size: 0.8rem;
+            color: #7090a0;
+            margin-top: 4px;
+        }
+
+        /* ── Bar chart ── */
+        .bar-chart { margin-top: 6px; }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 11px;
+            gap: 10px;
+        }
+        .bar-label {
+            width: 180px;
+            flex-shrink: 0;
+            font-size: 0.88rem;
+            color: #c0d4e8;
+            text-align: right;
+        }
+        .bar-track {
+            flex: 1;
+            background-color: #1e2e44;
+            border-radius: 4px;
+            height: 22px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background-color: #0ea5e9;
+            transition: width 0.3s;
+        }
+        .bar-fill.green  { background-color: #22c55e; }
+        .bar-fill.purple { background-color: #a78bfa; }
+        .bar-fill.amber  { background-color: #f59e0b; }
+        .bar-fill.rose   { background-color: #f43f5e; }
+        .bar-fill.teal   { background-color: #14b8a6; }
+        .bar-value {
+            width: 44px;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            color: #7090a0;
+        }
+
+        /* ── Data table ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 6px;
+            font-size: 0.88rem;
+        }
+        th {
+            background-color: #0f1f35;
+            color: #38bdf8;
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid #1e3550;
+        }
+        td {
+            padding: 9px 14px;
+            border: 1px solid #1a2a3a;
+            color: #c8d8e8;
+        }
+        tr:nth-child(even) td { background-color: #10101f; }
+
+        /* ── Conclusions ── */
+        .conclusions { color: #b0c8de; font-size: 0.92rem; }
+        .conclusions li { margin-bottom: 8px; margin-left: 20px; }
+
+        blockquote {
+            border-left: 3px solid #38bdf8;
+            padding: 10px 18px;
+            margin: 14px 0;
+            background-color: #0f1f35;
+            border-radius: 0 6px 6px 0;
+            font-style: italic;
+            color: #93c5fd;
+            font-size: 0.88rem;
+        }
+        blockquote cite {
+            display: block;
+            margin-top: 6px;
+            font-style: normal;
+            color: #5080a0;
+            font-size: 0.8rem;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            margin-top: 44px;
+            color: #506070;
+            font-size: 0.88rem;
+        }
+        a { color: #38bdf8; text-decoration: underline; }
+        a:hover { color: #7dd3fc; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>E-Commerce Survey Results</h1>
+    <p>A survey of 20 people &mdash; online shopping habits &amp; trends &mdash; by Emir Fenina</p>
+</header>
+
+<!-- ── Overview ── -->
+<div class="card">
+    <h2>Survey Overview</h2>
+    <p>
+        Twenty people were surveyed — a mix of university classmates, family members, and coworkers —
+        to understand how widely e-commerce is used in everyday life. The results are presented below
+        alongside supporting statistics from established industry research sources.
+    </p>
+    <div class="stat-grid" style="margin-top:18px;">
+        <div class="stat-box">
+            <span class="number">20</span>
+            <span class="label">Total respondents</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">18</span>
+            <span class="label">Have purchased online (90%)</span>
+        </div>
+        <div class="stat-box">
+            <span class="number">2</span>
+            <span class="label">Browsed but never purchased (10%)</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Q-A & Q-B ── -->
+<div class="card">
+    <h2>A &amp; B &mdash; Online Purchasing vs. Browsing Only</h2>
+
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">Purchased online</span>
+            <div class="bar-track"><div class="bar-fill green" style="width:90%;"></div></div>
+            <span class="bar-value">18 / 90%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Browsed, never purchased</span>
+            <div class="bar-track"><div class="bar-fill rose" style="width:10%;"></div></div>
+            <span class="bar-value">2 / 10%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Never browsed online</span>
+            <div class="bar-track"><div class="bar-fill" style="width:0%;"></div></div>
+            <span class="bar-value">0 / 0%</span>
+        </div>
+    </div>
+
+    <p style="margin-top:14px; color:#7090a0; font-size:0.87rem;">
+        Both non-purchasers cited concerns about payment security as the primary reason for not completing a purchase.
+    </p>
+</div>
+
+<!-- ── Q-C: Purchase Frequency ── -->
+<div class="card">
+    <h2>C &mdash; Purchase Frequency (among 18 online shoppers)</h2>
+
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">Once a week or more</span>
+            <div class="bar-track"><div class="bar-fill purple" style="width:22%;"></div></div>
+            <span class="bar-value">4 / 22%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Once a month</span>
+            <div class="bar-track"><div class="bar-fill" style="width:50%;"></div></div>
+            <span class="bar-value">9 / 50%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Once a year</span>
+            <div class="bar-track"><div class="bar-fill amber" style="width:28%;"></div></div>
+            <span class="bar-value">5 / 28%</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Q-D: Age Range ── -->
+<div class="card">
+    <h2>D &mdash; Age Range of Respondents</h2>
+
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">18 &ndash; 25</span>
+            <div class="bar-track"><div class="bar-fill teal" style="width:60%;"></div></div>
+            <span class="bar-value">12 / 60%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">26 &ndash; 39</span>
+            <div class="bar-track"><div class="bar-fill teal" style="width:25%;"></div></div>
+            <span class="bar-value">5 / 25%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">40 &ndash; 50</span>
+            <div class="bar-track"><div class="bar-fill teal" style="width:10%;"></div></div>
+            <span class="bar-value">2 / 10%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Over 50</span>
+            <div class="bar-track"><div class="bar-fill teal" style="width:5%;"></div></div>
+            <span class="bar-value">1 / 5%</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Q-E: Gender ── -->
+<div class="card">
+    <h2>E &mdash; Gender of Respondents</h2>
+
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">Male</span>
+            <div class="bar-track"><div class="bar-fill" style="width:55%;"></div></div>
+            <span class="bar-value">11 / 55%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Female</span>
+            <div class="bar-track"><div class="bar-fill rose" style="width:45%;"></div></div>
+            <span class="bar-value">9 / 45%</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Q-F: Education ── -->
+<div class="card">
+    <h2>F &mdash; Education Level</h2>
+
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">High school</span>
+            <div class="bar-track"><div class="bar-fill amber" style="width:15%;"></div></div>
+            <span class="bar-value">3 / 15%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Some college</span>
+            <div class="bar-track"><div class="bar-fill amber" style="width:45%;"></div></div>
+            <span class="bar-value">9 / 45%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">College graduate</span>
+            <div class="bar-track"><div class="bar-fill amber" style="width:30%;"></div></div>
+            <span class="bar-value">6 / 30%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Graduate school</span>
+            <div class="bar-track"><div class="bar-fill amber" style="width:10%;"></div></div>
+            <span class="bar-value">2 / 10%</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Q-G: Favorite Sites ── -->
+<div class="card">
+    <h2>G &mdash; Favorite Online Shopping Sites</h2>
+
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">Amazon</span>
+            <div class="bar-track"><div class="bar-fill" style="width:40%;"></div></div>
+            <span class="bar-value">8 / 40%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Trendyol</span>
+            <div class="bar-track"><div class="bar-fill purple" style="width:25%;"></div></div>
+            <span class="bar-value">5 / 25%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Hepsiburada</span>
+            <div class="bar-track"><div class="bar-fill teal" style="width:15%;"></div></div>
+            <span class="bar-value">3 / 15%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">AliExpress</span>
+            <div class="bar-track"><div class="bar-fill rose" style="width:10%;"></div></div>
+            <span class="bar-value">2 / 10%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">eBay</span>
+            <div class="bar-track"><div class="bar-fill amber" style="width:5%;"></div></div>
+            <span class="bar-value">1 / 5%</span>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">Other</span>
+            <div class="bar-track"><div class="bar-fill green" style="width:5%;"></div></div>
+            <span class="bar-value">1 / 5%</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── Raw Data Table ── -->
+<div class="card">
+    <h2>Raw Survey Data (All 20 Respondents)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Purchased?</th>
+                <th>Frequency</th>
+                <th>Age Range</th>
+                <th>Gender</th>
+                <th>Education</th>
+                <th>Favorite Site</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Yes</td><td>Weekly</td><td>18&ndash;25</td><td>Male</td><td>Some college</td><td>Amazon</td></tr>
+            <tr><td>2</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Female</td><td>Some college</td><td>Trendyol</td></tr>
+            <tr><td>3</td><td>Yes</td><td>Yearly</td><td>26&ndash;39</td><td>Male</td><td>College grad</td><td>Amazon</td></tr>
+            <tr><td>4</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Female</td><td>Some college</td><td>Trendyol</td></tr>
+            <tr><td>5</td><td>Yes</td><td>Weekly</td><td>18&ndash;25</td><td>Male</td><td>Some college</td><td>Amazon</td></tr>
+            <tr><td>6</td><td>Yes</td><td>Monthly</td><td>26&ndash;39</td><td>Female</td><td>College grad</td><td>Hepsiburada</td></tr>
+            <tr><td>7</td><td>No</td><td>&mdash;</td><td>40&ndash;50</td><td>Female</td><td>High school</td><td>&mdash;</td></tr>
+            <tr><td>8</td><td>Yes</td><td>Yearly</td><td>26&ndash;39</td><td>Male</td><td>College grad</td><td>Amazon</td></tr>
+            <tr><td>9</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Male</td><td>Some college</td><td>AliExpress</td></tr>
+            <tr><td>10</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Female</td><td>High school</td><td>Trendyol</td></tr>
+            <tr><td>11</td><td>Yes</td><td>Weekly</td><td>18&ndash;25</td><td>Male</td><td>Some college</td><td>Amazon</td></tr>
+            <tr><td>12</td><td>Yes</td><td>Yearly</td><td>26&ndash;39</td><td>Male</td><td>Grad school</td><td>Amazon</td></tr>
+            <tr><td>13</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Female</td><td>Some college</td><td>Trendyol</td></tr>
+            <tr><td>14</td><td>No</td><td>&mdash;</td><td>Over 50</td><td>Male</td><td>High school</td><td>&mdash;</td></tr>
+            <tr><td>15</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Male</td><td>Some college</td><td>Hepsiburada</td></tr>
+            <tr><td>16</td><td>Yes</td><td>Yearly</td><td>40&ndash;50</td><td>Female</td><td>College grad</td><td>Amazon</td></tr>
+            <tr><td>17</td><td>Yes</td><td>Monthly</td><td>26&ndash;39</td><td>Female</td><td>College grad</td><td>Hepsiburada</td></tr>
+            <tr><td>18</td><td>Yes</td><td>Monthly</td><td>18&ndash;25</td><td>Male</td><td>Grad school</td><td>AliExpress</td></tr>
+            <tr><td>19</td><td>Yes</td><td>Weekly</td><td>18&ndash;25</td><td>Female</td><td>Some college</td><td>eBay</td></tr>
+            <tr><td>20</td><td>Yes</td><td>Yearly</td><td>26&ndash;39</td><td>Male</td><td>College grad</td><td>Other</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ── Conclusions ── -->
+<div class="card">
+    <h2>Conclusions &amp; Commentary</h2>
+
+    <p class="conclusions">
+        The survey results paint a clear picture: online shopping is deeply embedded in daily life, especially
+        among younger and college-educated demographics. The 90% purchase rate among respondents is consistent
+        with national and global trends reported by major research organizations.
+    </p>
+
+    <h3>1. E-Commerce adoption is nearly universal among young adults</h3>
+    <p class="conclusions">
+        All 12 respondents in the 18&ndash;25 age group had purchased online, and four of them shop weekly.
+        This group also skews toward mobile-first platforms like Trendyol and Amazon Prime. The Pew Research
+        Center has consistently found that younger adults lead in online shopping adoption.
+    </p>
+    <blockquote>
+        "Some 79% of Americans say they buy things online&hellip; those in the 18&ndash;29 age group are
+        among the most likely to do so."
+        <cite>&mdash; Pew Research Center, "Online Shopping and E-Commerce" report</cite>
+    </blockquote>
+
+    <h3>2. Monthly purchasing is the dominant pattern</h3>
+    <p class="conclusions">
+        Half of all online shoppers in the survey purchase once a month, which aligns with subscription-driven
+        and repeat-purchase behavior fueled by platforms like Amazon Prime. Weekly shoppers (22%) tend to be
+        in the 18&ndash;25 bracket and report fashion and electronics as their primary categories.
+    </p>
+    <blockquote>
+        "Global e-commerce sales are projected to surpass $6 trillion, driven by recurring purchases
+        from loyalty program members and mobile app users."
+        <cite>&mdash; eMarketer, Global E-Commerce Forecast</cite>
+    </blockquote>
+
+    <h3>3. Security concerns remain the main barrier to purchasing</h3>
+    <p class="conclusions">
+        Both non-purchasers cited distrust of online payment systems as their primary reason for browsing
+        without buying. Despite major advances in SSL encryption and buyer protection programs, trust
+        remains a significant conversion barrier — particularly for older respondents.
+    </p>
+    <blockquote>
+        "Concerns about privacy and security continue to discourage a segment of internet users from
+        making online transactions, even as overall adoption grows."
+        <cite>&mdash; Pew Internet &amp; American Life Project (pewinternet.org)</cite>
+    </blockquote>
+
+    <h3>4. Amazon dominates, but regional platforms are competitive</h3>
+    <p class="conclusions">
+        Amazon was the top choice (40%), but regional Turkish platforms Trendyol (25%) and Hepsiburada (15%)
+        together account for 40% of favorite sites, reflecting the strength of local market players.
+        ClickZ research notes that localization — local language, local payment methods, and fast domestic
+        shipping — is a key driver of regional platform success over global giants.
+    </p>
+    <blockquote>
+        "Regional e-commerce platforms have gained significant market share by offering localized payment
+        options, same-day delivery, and culturally relevant product selections."
+        <cite>&mdash; ClickZ, E-Commerce Market Analysis</cite>
+    </blockquote>
+
+    <h3>5. Education level correlates with purchase frequency</h3>
+    <p class="conclusions">
+        All four weekly shoppers held at least some college education, while the once-a-year shoppers
+        were more evenly spread across education levels. Higher education appears to correlate with
+        greater digital comfort and more frequent online transactions, which is consistent with findings
+        reported by E-Commerce Times.
+    </p>
+    <blockquote>
+        "Consumers with higher education levels are more likely to shop online frequently and spend more
+        per transaction, partly due to higher income and greater familiarity with digital tools."
+        <cite>&mdash; E-Commerce Times (ecommercetimes.com)</cite>
+    </blockquote>
+</div>
+
+<footer>
+    <p>Survey conducted by <a href="mailto:20220859@std.neu.edu.tr">Emir Fenina</a> &mdash; ECC006 Homework #10</p>
+    <p style="margin-top:6px;">
+        Sources:
+        <a href="http://pewinternet.org" target="_blank" rel="noopener noreferrer">Pew Internet</a> &nbsp;|&nbsp;
+        <a href="http://www.emarketer.com" target="_blank" rel="noopener noreferrer">eMarketer</a> &nbsp;|&nbsp;
+        <a href="http://www.clickz.com" target="_blank" rel="noopener noreferrer">ClickZ</a> &nbsp;|&nbsp;
+        <a href="http://www.ecommercetimes.com" target="_blank" rel="noopener noreferrer">E-Commerce Times</a>
+    </p>
+</footer>
+
+</body>
+</html>

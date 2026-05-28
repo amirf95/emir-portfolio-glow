@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Survey</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0d1a;
+            color: #e0e0f0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: #a78bfa;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            color: #9090b0;
+            font-style: italic;
+        }
+
+        form {
+            max-width: 660px;
+            margin: 0 auto;
+            background-color: #13132a;
+            border: 1px solid #2e2e5a;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 6px 30px rgba(167, 139, 250, 0.12);
+        }
+
+        /* ── Row layout for labels + inputs ── */
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 22px;
+        }
+
+        .form-row label {
+            font-weight: bold;
+            color: #c4b5fd;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            background-color: #1c1c3a;
+            border: 1px solid #4a4a80;
+            border-radius: 6px;
+            color: #e0e0f0;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            padding: 9px 12px;
+            transition: border-color 0.2s;
+            width: 100%;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #a78bfa;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        select {
+            padding: 6px 10px;
+        }
+
+        /* ── Fieldsets ── */
+        fieldset {
+            border: 1px solid #4a4a80;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 22px;
+            background-color: #10102a;
+        }
+
+        legend {
+            color: #a78bfa;
+            font-weight: bold;
+            font-size: 0.95rem;
+            padding: 0 8px;
+        }
+
+        .choice-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .choice-row input[type="radio"],
+        .choice-row input[type="checkbox"] {
+            accent-color: #a78bfa;
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .choice-row label {
+            color: #d0d0f0;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        /* ── Buttons ── */
+        .button-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            flex: 1;
+            padding: 11px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+
+        input[type="submit"] {
+            background-color: #7c3aed;
+            color: #ffffff;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        input[type="reset"] {
+            background-color: #2e2e5a;
+            color: #c4b5fd;
+            border: 1px solid #4a4a80;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #3a3a70;
+        }
+
+        .section-label {
+            font-weight: bold;
+            color: #c4b5fd;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>&#9835; Music Survey &#9835;</h1>
+        <p>Tell us about your music taste</p>
+    </header>
+
+    <form action="http://www.uyar.com/teaching/ecc006/2017spring/login.php" method="post">
+
+        <!-- Name -->
+        <div class="form-row">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+
+        <!-- Email -->
+        <div class="form-row">
+            <label for="email">E-mail Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
+        </div>
+
+        <!-- Scrolling textarea: 60 cols, 3 rows -->
+        <div class="form-row">
+            <label for="comments">What do you love about music?</label>
+            <textarea id="comments" name="comments" cols="60" rows="3"
+                      placeholder="Share your thoughts here..."></textarea>
+        </div>
+
+        <!-- Radio button group -->
+        <fieldset>
+            <legend>How often do you listen to music?</legend>
+
+            <div class="choice-row">
+                <input type="radio" id="freq-daily" name="frequency" value="daily">
+                <label for="freq-daily">Every day</label>
+            </div>
+            <div class="choice-row">
+                <input type="radio" id="freq-workout" name="frequency" value="workout">
+                <label for="freq-workout">Only while working out</label>
+            </div>
+            <div class="choice-row">
+                <input type="radio" id="freq-commute" name="frequency" value="commute">
+                <label for="freq-commute">During my commute</label>
+            </div>
+            <div class="choice-row">
+                <input type="radio" id="freq-rarely" name="frequency" value="rarely">
+                <label for="freq-rarely">Rarely or never</label>
+            </div>
+        </fieldset>
+
+        <!-- Checkbox group -->
+        <fieldset>
+            <legend>Which genres do you enjoy? (select all that apply)</legend>
+
+            <div class="choice-row">
+                <input type="checkbox" id="genre-pop" name="genre" value="pop">
+                <label for="genre-pop">Pop</label>
+            </div>
+            <div class="choice-row">
+                <input type="checkbox" id="genre-rock" name="genre" value="rock">
+                <label for="genre-rock">Rock</label>
+            </div>
+            <div class="choice-row">
+                <input type="checkbox" id="genre-jazz" name="genre" value="jazz">
+                <label for="genre-jazz">Jazz</label>
+            </div>
+            <div class="choice-row">
+                <input type="checkbox" id="genre-hiphop" name="genre" value="hiphop">
+                <label for="genre-hiphop">Hip-Hop / R&B</label>
+            </div>
+            <div class="choice-row">
+                <input type="checkbox" id="genre-classical" name="genre" value="classical">
+                <label for="genre-classical">Classical</label>
+            </div>
+        </fieldset>
+
+        <!-- Select box: shows 3 items, contains 5 -->
+        <div class="form-row">
+            <label for="decade">Favorite Music Decade <small style="color:#9090b0;">(scroll to see more)</small></label>
+            <select id="decade" name="decade" size="3">
+                <option value="1970s">1970s</option>
+                <option value="1980s">1980s</option>
+                <option value="1990s">1990s</option>
+                <option value="2000s">2000s</option>
+                <option value="2010s">2010s</option>
+            </select>
+        </div>
+
+        <!-- Submit and Reset -->
+        <div class="button-row">
+            <input type="submit" value="Submit Survey">
+            <input type="reset" value="Reset Form">
+        </div>
+
+    </form>
+
+</body>
+</html>
