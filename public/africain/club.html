@@ -79,6 +79,17 @@
     .rivalry { background:linear-gradient(135deg,#120008,#080010); border:1px solid #3a0020; border-radius:10px; padding:30px 34px; margin-bottom:28px; }
     .rivalry h2 { color:#ff4488; border-bottom-color:#3a0020; }
 
+    /* Tunisia flag */
+    .tn-flag { width:24px; height:24px; border-radius:50%; object-fit:cover; vertical-align:middle; margin-right:6px; box-shadow:0 0 6px rgba(204,17,17,.35); }
+
+    /* Quadruple trophy row */
+    .quad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:16px; margin:20px 0; }
+    .quad-box { background:#0a0000; border:1px solid #3a1000; border-radius:8px; padding:20px 16px; text-align:center; }
+    .quad-box .q-icon { font-size:2.2rem; display:block; margin-bottom:8px; }
+    .quad-box .q-title { font-size:0.82rem; color:var(--white); font-weight:bold; margin-bottom:4px; }
+    .quad-box .q-detail { font-size:0.74rem; color:var(--muted); line-height:1.5; }
+    .newspaper-img { width:100%; max-width:480px; display:block; margin:20px auto; border-radius:8px; border:1px solid #3a1000; box-shadow:0 4px 20px rgba(0,0,0,.5); }
+
     .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
     footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
     footer a { color:var(--red); text-decoration:none; }
@@ -106,7 +117,10 @@
     alt="Club Africain Logo"
     class="hero-logo"
   >
-  <p class="label">Est. October 4, 1920 &bull; Tunis, Tunisia</p>
+  <p class="label">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" class="tn-flag">
+    Est. October 4, 1920 &bull; Tunis, Tunisia
+  </p>
   <h1>Club Africain</h1>
   <p>Al Ifriki — The African. The pride of Tunis. Red and white, forever.</p>
 </div>
@@ -188,6 +202,57 @@
         <p class="tl-event">Wins the Tunisian League Championship in dramatic fashion — sealing the title with a decisive derby goal in the 104th minute against Espérance.</p>
       </div>
     </div>
+  </div>
+
+  <!-- Historic Quadruple -->
+  <div class="card" style="border-color:#3a1000; background:linear-gradient(135deg,#110500,#0a0010);">
+    <h2 style="color:#ffaa44;">&#127942; The Historic Quadruple — 1991–92</h2>
+    <p>
+      Between December 1991 and January 1993, Club Africain completed one of the most remarkable
+      sequences in African football history — winning <strong>four major titles</strong> in a single
+      extended campaign. No Tunisian club had done anything like it before. No Tunisian club has
+      repeated it since.
+    </p>
+
+    <div class="quad-grid">
+      <div class="quad-box">
+        <span class="q-icon">&#127758;</span>
+        <div class="q-title">CAF Champions League</div>
+        <div class="q-detail">December 14, 1991<br>Defeated SC Villa (Uganda)<br>7–3 on aggregate<br>(6–2 home, 1–1 away)</div>
+      </div>
+      <div class="quad-box">
+        <span class="q-icon">&#127944;</span>
+        <div class="q-title">Tunisian League Championship</div>
+        <div class="q-detail">Season 1991–92<br>Finished above CA Bizertin<br>First domestic title of the era</div>
+      </div>
+      <div class="quad-box">
+        <span class="q-icon">&#127942;</span>
+        <div class="q-title">Tunisian Cup</div>
+        <div class="q-detail">June 21, 1992<br>Defeated Stade Tunisien<br>2–1 in the final</div>
+      </div>
+      <div class="quad-box">
+        <span class="q-icon">&#127760;</span>
+        <div class="q-title">Afro-Asian Club Championship</div>
+        <div class="q-detail">Dec 1992 – Jan 1993<br>Defeated Al-Hilal (Saudi Arabia)<br>4–3 on aggregate</div>
+      </div>
+    </div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Club_africain_14-12-1991.png"
+      alt="Club Africain — 14 December 1991, African Champions League final newspaper"
+      class="newspaper-img"
+    >
+    <p class="img-caption" style="text-align:center; color:#aaa; font-size:0.78rem; margin-top:-10px;">
+      Tunisian newspaper front page — December 14, 1991. The night Club Africain became Champions of Africa.
+    </p>
+
+    <p style="margin-top:16px;">
+      The CAF Champions League win on December 14, 1991 made Club Africain the
+      <strong>first Tunisian and first North African club</strong> to win the continental crown.
+      The entire city of Tunis erupted. That same year, their supporters at the Virage Nord
+      founded <strong>African Winners</strong> — naming the group after what the club had just achieved.
+      Four titles. One season. One city. One identity: <em>Winners</em>.
+    </p>
   </div>
 
   <!-- Trophy cabinet -->

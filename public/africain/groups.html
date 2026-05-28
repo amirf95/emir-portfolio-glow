@@ -45,6 +45,32 @@
     .group-card.esperance { border:1px solid #0010 3a; background:linear-gradient(135deg,#050015,#0a0010); border-color:#1a003a; }
     .group-card.sahel { border:1px solid #003a10; background:linear-gradient(135deg,#001505,#0a0010); }
     .group-card.sfax { border:1px solid #1a1a00; background:linear-gradient(135deg,#101000,#0a0010); }
+    /* Tunisia flag */
+    .tn-flag { width:22px; height:22px; border-radius:50%; object-fit:cover; vertical-align:middle; margin-right:6px; }
+
+    /* CSS Group badge circles */
+    .group-badge { width:90px; height:90px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 0 18px rgba(0,0,0,.5); }
+    .group-badge-inner { text-align:center; }
+    .gb-abbr { display:block; font-size:1.5rem; font-weight:900; letter-spacing:1px; line-height:1; }
+    .gb-year { display:block; font-size:0.55rem; letter-spacing:2px; text-transform:uppercase; margin-top:3px; }
+    .gb-symbol { font-size:2.2rem; line-height:1; }
+
+    .badge-africain { background:radial-gradient(circle,#2a0000,#080000); border:2px solid var(--red); }
+    .badge-africain .gb-abbr { color:var(--red); text-shadow:0 0 10px rgba(204,17,17,.6); }
+    .badge-africain .gb-year { color:#7a3a3a; }
+
+    .badge-esperance { background:radial-gradient(circle,#1a0030,#060010); border:2px solid #aa66ff; }
+    .badge-esperance .gb-abbr { color:#aa66ff; }
+    .badge-esperance .gb-year { color:#5a3a7a; }
+
+    .badge-sahel { background:radial-gradient(circle,#001a05,#000a00); border:2px solid #22cc66; }
+    .badge-sahel .gb-abbr { color:#22cc66; }
+    .badge-sahel .gb-year { color:#2a6a3a; }
+
+    .badge-sfax { background:radial-gradient(circle,#1a1800,#080800); border:2px solid #ddcc00; }
+    .badge-sfax .gb-abbr { color:#ddcc00; }
+    .badge-sfax .gb-year { color:#6a6200; }
+
     .group-num { font-size:3.5rem; font-weight:900; opacity:.4; line-height:1; }
     .group-card.africain .group-num { color:var(--red); }
     .group-card.esperance .group-num { color:#aa66ff; }
@@ -108,7 +134,10 @@
 </nav>
 
 <div class="page-hero">
-  <p class="label">Tunisia &bull; Morocco &bull; Brotherhood</p>
+  <p class="label">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" style="width:22px;height:22px;border-radius:50%;vertical-align:middle;margin-right:6px;">
+    Tunisia &bull; Morocco &bull; Brotherhood
+  </p>
   <h1>The Four Great Groups<br>&amp; The Friendship</h1>
   <p>Tunisia's four defining ultra groups, and the red thread connecting African Winners to their brothers in Casablanca.</p>
 </div>
@@ -133,10 +162,21 @@
 
     <!-- 1: African Winners -->
     <div class="group-card africain">
-      <div class="group-num">01</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div class="group-badge badge-africain">
+          <div class="group-badge-inner">
+            <span class="gb-abbr">AW</span>
+            <span class="gb-year">1995</span>
+          </div>
+        </div>
+        <div class="group-num" style="font-size:1.8rem;">01</div>
+      </div>
       <div>
         <div class="group-name">African Winners</div>
-        <div class="group-club">Club Africain &bull; Tunis</div>
+        <div class="group-club">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" class="tn-flag">
+          Club Africain &bull; Tunis
+        </div>
         <p style="color:#c0b0b0; font-size:0.88rem;">
           The original. Founded in <strong>1995</strong>, African Winners was the first ultra group in
           Tunisia and the entire Arab world. They introduced tifo culture, organized chanting, and the
@@ -157,10 +197,21 @@
 
     <!-- 2: Ultras L'Emkachkhines -->
     <div class="group-card esperance">
-      <div class="group-num">02</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div class="group-badge badge-esperance">
+          <div class="group-badge-inner">
+            <span class="gb-abbr" style="font-size:1.1rem;">ULE</span>
+            <span class="gb-year">2002</span>
+          </div>
+        </div>
+        <div class="group-num" style="font-size:1.8rem;">02</div>
+      </div>
       <div>
         <div class="group-name">Ultras L'Emkachkhines</div>
-        <div class="group-club">Espérance Sportive de Tunis &bull; Tunis</div>
+        <div class="group-club">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" class="tn-flag">
+          Espérance Sportive de Tunis &bull; Tunis
+        </div>
         <p style="color:#c0b0d0; font-size:0.88rem;">
           Founded in <strong>2002</strong>, Ultras L'Emkachkhines (ULE) are the organized ultra wing of
           Espérance Sportive de Tunis — Club Africain's great rivals. The name means "those who are
@@ -183,10 +234,21 @@
 
     <!-- 3: Brigades Rouges -->
     <div class="group-card sahel">
-      <div class="group-num">03</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div class="group-badge badge-sahel">
+          <div class="group-badge-inner">
+            <span class="gb-abbr">BR</span>
+            <span class="gb-year">ESS</span>
+          </div>
+        </div>
+        <div class="group-num" style="font-size:1.8rem;">03</div>
+      </div>
       <div>
         <div class="group-name">Brigades Rouges</div>
-        <div class="group-club">Étoile Sportive du Sahel &bull; Sousse</div>
+        <div class="group-club">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" class="tn-flag">
+          Étoile Sportive du Sahel &bull; Sousse
+        </div>
         <p style="color:#b0d0b0; font-size:0.88rem;">
           The principal ultra group of <strong>Étoile Sportive du Sahel</strong> (ESS), the major club
           of Sousse on Tunisia's eastern coast. The name "Brigades Rouges" — Red Brigades — carries
@@ -208,10 +270,21 @@
 
     <!-- 4: Fighters -->
     <div class="group-card sfax">
-      <div class="group-num">04</div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div class="group-badge badge-sfax">
+          <div class="group-badge-inner">
+            <span class="gb-abbr" style="font-size:2rem;">F</span>
+            <span class="gb-year">CSS</span>
+          </div>
+        </div>
+        <div class="group-num" style="font-size:1.8rem;">04</div>
+      </div>
       <div>
         <div class="group-name">Fighters</div>
-        <div class="group-club">Club Sportif Sfaxien &bull; Sfax</div>
+        <div class="group-club">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" class="tn-flag">
+          Club Sportif Sfaxien &bull; Sfax
+        </div>
         <p style="color:#d0d0b0; font-size:0.88rem;">
           The ultra group of <strong>Club Sportif Sfaxien</strong> (CSS), the flagship club of Sfax —
           Tunisia's second city and its economic capital. The name "Fighters" reflects both the

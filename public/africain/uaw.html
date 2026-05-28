@@ -72,6 +72,36 @@
     .virage { background:linear-gradient(135deg,#1a0000,#080010); border:1px solid #3a0010; border-radius:10px; padding:32px 36px; margin-bottom:28px; }
     .virage h2 { color:#ff6666; border-bottom-color:#3a0010; }
 
+    /* Tunisia round flag */
+    .tn-flag { width:24px; height:24px; border-radius:50%; object-fit:cover; vertical-align:middle; margin-right:6px; box-shadow:0 0 6px rgba(204,17,17,.4); }
+
+    /* AW Emblem badges */
+    .logo-showcase { display:flex; justify-content:center; gap:52px; padding:32px 0 20px; flex-wrap:wrap; }
+    .logo-block { text-align:center; }
+    .badge-circle { width:148px; height:148px; border-radius:50%; border:3px solid var(--red); background:radial-gradient(circle at 40% 35%,#280000,#080000); display:flex; align-items:center; justify-content:center; margin:0 auto 14px; box-shadow:0 0 30px rgba(204,17,17,.5),inset 0 0 20px rgba(0,0,0,.6); position:relative; }
+    .badge-circle::after { content:""; position:absolute; inset:4px; border-radius:50%; border:1px solid rgba(204,17,17,.25); }
+    .b-main { display:block; font-size:2.6rem; font-weight:900; color:var(--red); letter-spacing:3px; line-height:1; text-shadow:0 0 18px rgba(204,17,17,.7); }
+    .b-sub { display:block; font-size:0.62rem; color:var(--muted); letter-spacing:4px; margin-top:5px; text-transform:uppercase; }
+    .b-yaz { font-size:4.2rem; color:var(--red); text-shadow:0 0 28px rgba(204,17,17,.7); line-height:1; }
+    .logo-block .lb-title { font-size:0.82rem; color:var(--white); letter-spacing:1.5px; text-transform:uppercase; font-weight:bold; }
+    .logo-block .lb-desc { font-size:0.78rem; color:var(--muted); max-width:180px; margin:7px auto 0; line-height:1.5; }
+
+    /* Tifo gallery */
+    .tifo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:18px 0 8px; }
+    .tifo-img { width:100%; height:190px; object-fit:cover; border-radius:8px; border:1px solid #3a0010; filter:brightness(.82) saturate(.9); }
+    .img-cap { font-size:0.76rem; color:var(--muted); text-align:center; margin-bottom:14px; letter-spacing:.5px; }
+
+    /* Rescue */
+    .rescue-card { background:linear-gradient(135deg,#120000,#080010); border:1px solid #4a0010; border-radius:10px; padding:30px 34px; margin-bottom:28px; }
+    .rescue-card h2 { color:#ff4466; border-bottom-color:#4a0010; font-size:1.3rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid #4a0010; }
+    .rescue-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:14px; margin:20px 0; }
+    .rs-box { background:#0a0000; border:1px solid #3a0000; border-radius:8px; padding:18px 14px; text-align:center; }
+    .rs-num { font-size:2rem; font-weight:900; color:var(--red); display:block; line-height:1; }
+    .rs-lbl { font-size:0.7rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase; margin-top:5px; display:block; }
+    .rescue-story li { padding:10px 0; border-bottom:1px solid #18060a; font-size:0.88rem; color:#c0c0d0; display:flex; gap:12px; }
+    .rescue-story li:last-child { border-bottom:none; }
+    .rescue-story .rs-icon { color:var(--red); font-size:1.1rem; flex-shrink:0; }
+
     .stripe { height:4px; background:repeating-linear-gradient(90deg,var(--red) 0,var(--red) 50%,var(--white) 50%,var(--white) 100%); background-size:20px 100%; opacity:.3; }
     footer { background:#060006; border-top:2px solid var(--red-dark); padding:24px; text-align:center; color:var(--muted); font-size:0.82rem; }
     footer a { color:var(--red); text-decoration:none; }
@@ -92,7 +122,10 @@
 </nav>
 
 <div class="page-hero">
-  <p class="label">Tunis &bull; Tunisia &bull; Virage Nord</p>
+  <p class="label">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Roundel_of_Tunisia.svg" alt="Tunisia" class="tn-flag">
+    Tunis &bull; Tunisia &bull; Virage Nord
+  </p>
   <div class="arabic-title">أفريكان وينرز</div>
   <h1>Ultras Africain<br>Winners</h1>
   <span class="founded">Founded 1995 &bull; First in Tunisia &bull; First in the Arab World</span>
@@ -168,6 +201,37 @@
     </p>
   </div>
 
+  <!-- The Two Emblems -->
+  <div class="card">
+    <h2>The Two Emblems of African Winners</h2>
+    <div class="logo-showcase">
+      <div class="logo-block">
+        <div class="badge-circle">
+          <div>
+            <span class="b-main">AW</span>
+            <span class="b-sub">1995</span>
+          </div>
+        </div>
+        <p class="lb-title">The Classic Badge</p>
+        <p class="lb-desc">The founding identity — bold red initials on a dark circular badge, worn since 1995. Simple, powerful, unmistakable.</p>
+      </div>
+      <div class="logo-block">
+        <div class="badge-circle">
+          <span class="b-yaz">ⵣ</span>
+        </div>
+        <p class="lb-title">The Yaz — Amazigh Sign</p>
+        <p class="lb-desc">The Tifinagh letter ⵣ (Yaz) — ancient symbol of the free Amazigh people of North Africa. It means "the free man." African Winners carry it to root the group in the land of Ifriqiya itself.</p>
+      </div>
+    </div>
+    <p>
+      Together these two emblems define what African Winners stands for. The <strong>classic badge</strong>
+      declares football identity — who we are in the stands. The <strong>Yaz</strong> declares something
+      deeper: we are sons of this land, free people supporting a free club on free soil. It is the same
+      symbol carried by Amazigh communities across Tunisia, Algeria, and Morocco for centuries —
+      now flown in the Virage Nord at Stade de Radès.
+    </p>
+  </div>
+
   <!-- The Virage Nord -->
   <div class="virage">
     <h2>The Virage Nord — Home of the Winners</h2>
@@ -234,6 +298,115 @@
     <blockquote style="margin-top:24px; font-size:1rem; border-left-width:4px;">
       "We are not just fans. We are the memory of 1991. We are the sound of the north curve.
       We are African Winners — the first, and forever."
+    </blockquote>
+  </div>
+
+  <!-- Tifo Section -->
+  <div class="card">
+    <h2>The Art of the Tifo</h2>
+    <p>
+      African Winners did not just bring chanting to the Virage Nord — they introduced
+      <strong>tifo culture</strong> to an entire continent. The word "tifo" comes from Italian
+      tifoso (supporter fever). For African Winners it is something else: it is months of
+      preparation, paintbrushes and fabric, a collective labour of love revealed in a single
+      breathtaking moment as the players walk out of the tunnel.
+    </p>
+
+    <div class="tifo-grid">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/CA_MAS_AFR_LIGUEFOOT_Nov2011_14.JPG"
+           alt="Virage Nord atmosphere" class="tifo-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/CA_MAS_AFR_LIGUEFOOT_Nov2011_15.JPG"
+           alt="Club Africain supporters" class="tifo-img">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/CA_MAS_AFR_LIGUEFOOT_Nov2011_29.JPG"
+           alt="Match atmosphere Radès" class="tifo-img">
+    </div>
+    <p class="img-cap">Club Africain — Stade de Radès, Virage Nord</p>
+
+    <h3>What a Tifo Requires</h3>
+    <p>
+      Every major tifo is a project. Weeks before the derby, members of African Winners gather
+      in workshops — often private garages or school halls — to paint enormous fabric panels.
+      Each panel is assigned a section of the stand. On matchday, they are folded, smuggled in,
+      distributed across every row, and held up on signal from the capo. From the pitch it looks
+      like a single image; from inside the stand, everyone holds a fragment of the picture.
+    </p>
+    <p>
+      African Winners tifos have featured: the map of Africa with Tunis at its heart; giant
+      portraits of Stade de Radès itself rendered in red and white brushstrokes; the Yaz symbol
+      unfurled across four thousand seats; tributes to the 1991 continental triumph; and messages
+      for players who have passed through the club carrying the weight of an entire city's hopes.
+    </p>
+
+    <h3>The Ultras' Role — Beyond the 90 Minutes</h3>
+    <p>
+      In North African football, the ultra groups are the last line of identity when the club
+      itself falters. When Club Africain went through poor sporting periods, it was the Virage Nord —
+      African Winners, Leaders Clubistes, North Vandals — that maintained the atmosphere, that
+      kept the stadium full, that reminded the players they were not alone. The curve does not
+      perform for results. It performs for the badge.
+    </p>
+    <p>
+      The tifos in those difficult years were the most important of all — not celebrations, but
+      declarations. <em>We are still here. This shirt still means something. Win or lose,
+      the north curve stands.</em>
+    </p>
+
+    <blockquote>
+      "The tifo is not for the players. It is not for the television cameras. It is for the
+      club — to remind it who it is, what it carries, and why it matters."
+    </blockquote>
+  </div>
+
+  <!-- 2019 Rescue -->
+  <div class="rescue-card">
+    <h2>&#10084; When the Fans Rescued Club Africain — 2019</h2>
+    <p>
+      In 2019, Club Africain faced an existential crisis. Years of financial mismanagement had
+      accumulated into a debt of approximately <strong>18 million Tunisian dinars (~$6 million USD)</strong>.
+      The Tunisian Football Federation penalized the club with a <strong>6-point deduction</strong>
+      and financial sanctions that threatened their place in the league.
+    </p>
+    <p>
+      The board could not solve it. The federation would not wait. So the supporters did what
+      ultras do: they organized.
+    </p>
+
+    <div class="rescue-stats">
+      <div class="rs-box"><span class="rs-num">$450K</span><span class="rs-lbl">Donated in 24 hours</span></div>
+      <div class="rs-box"><span class="rs-num">$1M+</span><span class="rs-lbl">Total raised in weeks</span></div>
+      <div class="rs-box"><span class="rs-num">18M</span><span class="rs-lbl">Dinars of total debt</span></div>
+      <div class="rs-box"><span class="rs-num">1 day</span><span class="rs-lbl">To prove their love</span></div>
+    </div>
+
+    <h3>The Stories That Made the World Watch</h3>
+    <ul class="rescue-story" style="list-style:none;">
+      <li>
+        <span class="rs-icon">&#9829;</span>
+        <div><strong>Children with piggy banks</strong> — young Club Africain fans arrived at bank branches across Tunis carrying their savings jars, emptying everything they had saved for their club.</div>
+      </li>
+      <li>
+        <span class="rs-icon">&#9829;</span>
+        <div><strong>The blind supporter</strong> — a visually impaired fan donated the money he had set aside for his medication. The club honored him personally with a signed shirt. His gesture was reported internationally.</div>
+      </li>
+      <li>
+        <span class="rs-icon">&#9829;</span>
+        <div><strong>The diaspora answered</strong> — Tunisian fans in France, Germany, and across Europe transferred what they could, making the rescue a truly global demonstration of belonging.</div>
+      </li>
+      <li>
+        <span class="rs-icon">&#9829;</span>
+        <div><strong>A Commission de Sauvetage was formed</strong> — following the campaign, supporters created a formal "Rescue Commission" that pushed for governance reform, ensuring the rescue was not just financial but structural.</div>
+      </li>
+    </ul>
+
+    <p style="margin-top:18px;">
+      This is what it means to be part of Club Africain. Not a spectator. Not a consumer.
+      A <strong>co-owner of the soul of the club</strong> — one who gives when giving is needed,
+      who shows up when showing up costs something real.
+    </p>
+    <blockquote style="border-color:#ff4466; background:#12000a;">
+      "In 24 hours, the supporters of Club Africain gave more than half a million dollars.
+      No board meeting. No press conference. Just love — the organised, powerful, unstoppable
+      love of an ultra fanbase."
     </blockquote>
   </div>
 
