@@ -16,10 +16,24 @@
     .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
 
     .page-hero {
-      background: linear-gradient(135deg, #2a0000 0%, #0f0005 60%, var(--bg) 100%);
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 72px 24px 56px;
       text-align: center;
+      background:
+        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(204,17,17,.04) 60px, rgba(204,17,17,.04) 61px),
+        radial-gradient(ellipse at center, #2a0000 0%, #0a0000 45%, var(--bg) 100%);
       border-bottom: 1px solid var(--border);
+    }
+    .hero-logo {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 0 24px rgba(204,17,17,.55));
     }
     .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
     .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 40px rgba(204,17,17,.5); margin-bottom:10px; }
@@ -80,6 +94,11 @@
 </nav>
 
 <div class="page-hero">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/en/e/e5/Club_Africain_logo.svg"
+    alt="Club Africain Logo"
+    class="hero-logo"
+  >
   <p class="label">Est. October 4, 1920 &bull; Tunis, Tunisia</p>
   <h1>Club Africain</h1>
   <p>Al Ifriki — The African. The pride of Tunis. Red and white, forever.</p>
