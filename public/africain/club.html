@@ -16,7 +16,7 @@
     .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
 
     .page-hero {
-      min-height: 60vh;
+      min-height: 70vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -24,20 +24,27 @@
       padding: 72px 24px 56px;
       text-align: center;
       background:
-        repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(204,17,17,.04) 60px, rgba(204,17,17,.04) 61px),
-        radial-gradient(ellipse at center, #2a0000 0%, #0a0000 45%, var(--bg) 100%);
+        linear-gradient(to bottom, rgba(7,0,13,0.5) 0%, rgba(42,0,0,0.78) 55%, rgba(7,7,13,0.97) 100%),
+        url('https://upload.wikimedia.org/wikipedia/commons/7/77/Stade_De_Rades.JPG') center/cover no-repeat;
       border-bottom: 1px solid var(--border);
     }
     .hero-logo {
-      width: 140px;
-      height: 140px;
+      width: 150px;
+      height: 150px;
       object-fit: contain;
       margin-bottom: 28px;
-      filter: drop-shadow(0 0 24px rgba(204,17,17,.55));
+      filter: drop-shadow(0 0 28px rgba(204,17,17,.7));
     }
-    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:12px; }
-    .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 40px rgba(204,17,17,.5); margin-bottom:10px; }
-    .page-hero p { color:var(--muted); font-size:0.95rem; max-width:540px; margin:0 auto; }
+    .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:#ff9999; margin-bottom:12px; }
+    .page-hero h1 { font-size:clamp(2.2rem,5vw,3.8rem); font-weight:900; letter-spacing:2px; text-transform:uppercase; color:var(--white); text-shadow:0 0 50px rgba(204,17,17,.8); margin-bottom:10px; }
+    .page-hero p { color:#c8c0d0; font-size:0.95rem; max-width:540px; margin:0 auto; }
+
+    /* Section images */
+    .section-img { width:100%; border-radius:8px; margin:16px 0; object-fit:cover; max-height:320px; border:1px solid var(--border); filter:brightness(.85) saturate(.9); }
+    .img-caption { font-size:0.78rem; color:var(--muted); text-align:center; margin-top:-8px; margin-bottom:14px; letter-spacing:1px; }
+
+    /* Match atmosphere image */
+    .atm-img { width:100%; border-radius:8px; margin:20px 0 6px; object-fit:cover; max-height:280px; border:1px solid #3a0010; }
 
     .container { max-width:900px; margin:0 auto; padding:60px 24px; }
     .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:30px 34px; margin-bottom:28px; }
@@ -95,7 +102,7 @@
 
 <div class="page-hero">
   <img
-    src="https://upload.wikimedia.org/wikipedia/en/e/e5/Club_Africain_logo.svg"
+    src="https://upload.wikimedia.org/wikipedia/commons/7/76/Logo_Club_Africain_officiel.png"
     alt="Club Africain Logo"
     class="hero-logo"
   >
@@ -234,6 +241,12 @@
   <div class="card">
     <h2>The Stadium</h2>
     <h3>Stade Olympique de Rad&egrave;s — Primary Venue</h3>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/7/77/Stade_De_Rades.JPG"
+      alt="Stade Olympique de Radès"
+      class="section-img"
+    >
+    <p class="img-caption">Stade Olympique de Radès &mdash; Capacity ~60,000</p>
     <p>
       Club Africain play their home matches at the <strong>Stade Olympique de Radès</strong>, Tunisia's
       national stadium with a capacity of approximately <strong>60,000 supporters</strong>. It is one of
@@ -245,6 +258,12 @@
       the smoke, the tifos: this is where the Ultras Africain Winners write history every matchday.
     </p>
     <h3>El Menzah &amp; Zouiten</h3>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/d/d3/El_Menzah_Stadium_2.jpg"
+      alt="Stade Olympique El Menzah"
+      class="section-img"
+    >
+    <p class="img-caption">Stade Olympique El Menzah &mdash; Capacity ~39,858</p>
     <p>
       The club also uses <strong>Stade Olympique d'El Menzah</strong> (capacity ~39,858) as a secondary venue,
       and the historic <strong>Stade Chedly Zouiten</strong> holds a place in the club's earlier history.
@@ -268,6 +287,12 @@
       <strong>the 104th minute of the final-day derby</strong> — beating Espérance on their shared pitch
       to claim the championship. There is no more fitting way for Club Africain to win.
     </p>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/9/9e/CA_MAS_AFR_LIGUEFOOT_Nov2011_14.JPG"
+      alt="Club Africain match atmosphere"
+      class="atm-img"
+    >
+    <p class="img-caption" style="color:#ff8888aa;">Club Africain — match atmosphere at Stade de Radès</p>
     <p style="color:#ff8888; font-style:italic; margin-top:14px;">
       "When the derby comes, the city stops. When Africain wins the derby, the city sings."
     </p>

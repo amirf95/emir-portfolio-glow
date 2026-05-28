@@ -15,19 +15,16 @@
     .nav-links a:hover, .nav-links a.active { color:var(--white); background:rgba(204,17,17,.15); }
 
     .page-hero {
-      min-height:50vh;
+      min-height:70vh;
       display:flex; flex-direction:column; align-items:center; justify-content:center;
       padding:72px 24px 60px;
       text-align:center;
-      background:radial-gradient(ellipse at 60% 40%,#3a0000 0%,#120008 40%,var(--bg) 100%);
+      background:
+        linear-gradient(to bottom, rgba(7,0,13,0.45) 0%, rgba(58,0,0,0.82) 55%, rgba(7,7,13,0.98) 100%),
+        url('https://upload.wikimedia.org/wikipedia/commons/9/9e/CA_MAS_AFR_LIGUEFOOT_Nov2011_14.JPG') center/cover no-repeat;
       border-bottom:1px solid var(--border);
       position:relative;
       overflow:hidden;
-    }
-    .page-hero::before {
-      content:"";
-      position:absolute; inset:0;
-      background:repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(204,17,17,.03) 30px,rgba(204,17,17,.03) 31px);
     }
     .page-hero .label { font-size:0.72rem; letter-spacing:4px; text-transform:uppercase; color:var(--red); margin-bottom:14px; }
     .page-hero .arabic-title { font-size:2rem; color:rgba(255,100,100,.6); direction:rtl; margin-bottom:12px; }
@@ -44,6 +41,13 @@
     strong { color:var(--white); }
     blockquote { border-left:3px solid var(--red); padding:14px 20px; background:#0f0008; border-radius:0 6px 6px 0; margin:18px 0; font-style:italic; color:#c0c0d0; font-size:0.9rem; }
     blockquote cite { display:block; margin-top:8px; font-style:normal; color:var(--muted); font-size:0.8rem; }
+
+    /* Logo pair display */
+    .logo-pair { display:flex; align-items:center; justify-content:center; gap:36px; padding:28px 0; flex-wrap:wrap; }
+    .logo-item { text-align:center; }
+    .logo-item img { width:110px; height:110px; object-fit:contain; filter:drop-shadow(0 0 18px rgba(204,17,17,.5)); display:block; margin:0 auto 10px; }
+    .logo-item span { font-size:0.78rem; color:var(--muted); letter-spacing:2px; text-transform:uppercase; }
+    .logo-heart { font-size:2rem; color:var(--red); text-shadow:0 0 16px rgba(204,17,17,.6); }
 
     /* Big stat */
     .big-stat { text-align:center; padding:28px; background:#0a0000; border:1px solid var(--red-dark); border-radius:10px; margin-bottom:28px; }
@@ -131,6 +135,19 @@
   <!-- The name: Winners -->
   <div class="card">
     <h2>Why "Winners"?</h2>
+
+    <div class="logo-pair">
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Logo_Club_Africain_officiel.png" alt="Club Africain">
+        <span>Club Africain</span>
+      </div>
+      <span class="logo-heart">&#10084;</span>
+      <div class="logo-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Wydad_Athletic_Club_logo.svg" alt="Wydad AC">
+        <span>Wydad AC</span>
+      </div>
+    </div>
+
     <p>
       The name carries weight. Club Africain had, just four years before the group's founding,
       achieved the greatest result in Tunisian football history: winning the
