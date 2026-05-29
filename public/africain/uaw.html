@@ -75,6 +75,15 @@
     /* Tunisia round flag */
     .tn-flag { width:24px; height:24px; border-radius:50%; object-fit:cover; vertical-align:middle; margin-right:6px; box-shadow:0 0 6px rgba(204,17,17,.4); }
 
+    /* Video embeds */
+    .video-section { margin-bottom:28px; }
+    .video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin:16px 0; }
+    .video-wrap { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:10px; border:1px solid #3a0010; box-shadow:0 4px 20px rgba(0,0,0,.5); }
+    .video-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+    .video-label { font-size:0.76rem; color:var(--muted); text-align:center; margin-top:6px; letter-spacing:.5px; }
+    .featured-video { position:relative; padding-bottom:52%; height:0; overflow:hidden; border-radius:12px; border:2px solid var(--red-dark); box-shadow:0 0 40px rgba(204,17,17,.25); }
+    .featured-video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
     /* AW Emblem badges */
     .logo-showcase { display:flex; justify-content:center; gap:52px; padding:32px 0 20px; flex-wrap:wrap; }
     .logo-block { text-align:center; }
@@ -139,6 +148,19 @@
     <span class="num">1995</span>
     <span class="lbl">Year Founded</span>
     <span class="sub">The year ultra culture was born in Tunisia — and in the entire Arab world</span>
+  </div>
+
+  <!-- Featured virage video -->
+  <div class="video-section">
+    <div class="featured-video">
+      <iframe
+        src="https://www.youtube.com/embed/t14DKqiQFgw"
+        title="Club Africain — Curva Nord, Le Meilleur Virage Arabe et Africain"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-label">Club Africain — Curva Nord &bull; Le Meilleur Virage Arabe et Africain</p>
   </div>
 
   <div class="card">
@@ -350,6 +372,69 @@
       declarations. <em>We are still here. This shirt still means something. Win or lose,
       the north curve stands.</em>
     </p>
+
+    <h3>The Tifos in Action — Watch</h3>
+
+    <!-- Second featured video (virage atmosphere) -->
+    <div style="margin:16px 0;">
+      <div class="featured-video">
+        <iframe
+          src="https://www.youtube.com/embed/oXLHbYKg1Nk"
+          title="Tifo Club Africain vs Espérance — Derby Tunisois 2017"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-label">Tifo — Club Africain vs Espérance &bull; Derby Tunisois 2017</p>
+    </div>
+
+    <!-- Tifo video grid -->
+    <div class="video-grid">
+      <div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/I5r9cmxneTk"
+            title="Amazing Double Tifo — Club Africain"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-label">Amazing Double Tifo &bull; Club Africain</p>
+      </div>
+      <div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/i0VIraJ54pw"
+            title="Best Tifo by Leaders Clubistes — Club Africain Derby"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-label">Best Derby Tifo &bull; Leaders Clubistes</p>
+      </div>
+      <div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/gCQf-UqhihM"
+            title="Making Of Tifo — Club Africain"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-label">Making Of a Tifo &bull; Behind the Scenes</p>
+      </div>
+      <div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/hHGAthvOZPU"
+            title="Virage Club Africain — La Vida Ultra"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-label">Virage Club Africain &bull; La Vida Ultra</p>
+      </div>
+    </div>
 
     <blockquote>
       "The tifo is not for the players. It is not for the television cameras. It is for the
